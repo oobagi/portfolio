@@ -2,6 +2,7 @@ import type { Project } from "@/lib/github";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ProjectCard } from "@/components/project-card";
+import { AnimateIn } from "@/components/ui/animate-in";
 
 interface ProjectsSectionProps {
   projects: Project[];
@@ -10,11 +11,15 @@ interface ProjectsSectionProps {
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
     <Section id="projects">
-      <SectionHeading title="Projects" subtitle="Things I've built" />
+      <AnimateIn>
+        <SectionHeading title="Projects" subtitle="Things I've built" />
+      </AnimateIn>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
-          <ProjectCard key={project.name} project={project} />
+        {projects.map((project, index) => (
+          <AnimateIn key={project.name} delay={index * 100}>
+            <ProjectCard project={project} />
+          </AnimateIn>
         ))}
       </div>
     </Section>

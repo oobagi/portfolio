@@ -2,6 +2,7 @@ import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
 import { SocialLinks, DEFAULT_SOCIAL_LINKS } from "@/components/social-links";
+import { AnimateIn } from "@/components/ui/animate-in";
 
 const EMAIL_ICON = (
   <svg
@@ -24,29 +25,31 @@ const EMAIL_ICON = (
 export function ContactSection() {
   return (
     <Section id="contact" className="text-center">
-      <SectionHeading
-        title="Get in Touch"
-        subtitle="Have a project idea or just want to say hello?"
-        className="mx-auto max-w-lg [&>h2]:text-center [&>p]:text-center"
-      />
+      <AnimateIn>
+        <SectionHeading
+          title="Get in Touch"
+          subtitle="Have a project idea or just want to say hello?"
+          className="mx-auto max-w-lg [&>h2]:text-center [&>p]:text-center"
+        />
 
-      <div className="mx-auto max-w-md">
-        <p className="text-[var(--text-secondary)] leading-relaxed">
-          I&apos;m always open to interesting conversations and opportunities.
-          Drop me a line and let&apos;s connect.
-        </p>
+        <div className="mx-auto max-w-md">
+          <p className="text-[var(--text-secondary)] leading-relaxed">
+            I&apos;m always open to interesting conversations and opportunities.
+            Drop me a line and let&apos;s connect.
+          </p>
 
-        <div className="mt-8">
-          <Button href="mailto:jadenwatson3@gmail.com" size="md">
-            {EMAIL_ICON}
-            Say Hello
-          </Button>
+          <div className="mt-8">
+            <Button href="mailto:jadenwatson3@gmail.com" size="md">
+              {EMAIL_ICON}
+              Say Hello
+            </Button>
+          </div>
+
+          <div className="mt-8 flex justify-center">
+            <SocialLinks links={DEFAULT_SOCIAL_LINKS} />
+          </div>
         </div>
-
-        <div className="mt-8 flex justify-center">
-          <SocialLinks links={DEFAULT_SOCIAL_LINKS} />
-        </div>
-      </div>
+      </AnimateIn>
     </Section>
   );
 }

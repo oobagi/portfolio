@@ -23,8 +23,8 @@ const BASE_CLASSES = [
 ].join(" ");
 
 const INTERACTIVE_CLASSES = [
-  "hover:-translate-y-0.5 hover:border-[var(--brand-primary)]",
-  "hover:shadow-[var(--shadow-md)]",
+  "hover:-translate-y-1 hover:scale-[1.02] hover:border-[var(--brand-primary)]",
+  "hover:shadow-[var(--shadow-lg)] dark:hover:shadow-[var(--shadow-glow-sm)]",
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-primary)]",
 ].join(" ");
 

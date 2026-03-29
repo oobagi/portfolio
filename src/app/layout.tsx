@@ -5,8 +5,41 @@ import { Footer } from "@/components/footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Jaden Watson",
+  metadataBase: new URL("https://jadenwatson.dev"),
+  title: {
+    default: "Jaden Watson",
+    template: "%s | Jaden Watson",
+  },
   description: "Personal portfolio and blog showcasing my best projects.",
+  openGraph: {
+    title: "Jaden Watson",
+    description: "Personal portfolio and blog showcasing my best projects.",
+    url: "https://jadenwatson.dev",
+    siteName: "Jaden Watson",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Jaden Watson — Developer Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@jadenwatson",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -18,12 +51,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <ThemeScript />
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="RSS"
-          href="/feed.xml"
-        />
       </head>
       <body className="font-sans antialiased">
         <Header />
