@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import { SocialLinks, DEFAULT_SOCIAL_LINKS } from "@/components/social-links";
+import { AnimateIn } from "@/components/ui/animate-in";
 
 export function HeroSection() {
   return (
@@ -8,7 +9,7 @@ export function HeroSection() {
       id="hero"
       className="flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center !py-16 md:!py-20"
     >
-      <div className="max-w-2xl text-center">
+      <AnimateIn className="max-w-2xl text-center">
         {/* Decorative mono-font greeting */}
         <p className="mb-6 font-mono text-sm tracking-wide text-[var(--brand-primary)]">
           &gt; whoami
@@ -57,7 +58,7 @@ export function HeroSection() {
             </svg>
           </Button>
         </div>
-      </div>
+      </AnimateIn>
     </Section>
   );
 }

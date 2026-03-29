@@ -31,7 +31,7 @@ const VARIANT_CLASSES: Record<Variant, string> = {
   primary: [
     "bg-primary-700 dark:bg-primary-500 text-white font-medium",
     "hover:bg-primary-800 dark:hover:bg-primary-400",
-    "dark:hover:shadow-[var(--shadow-glow-sm)]",
+    "hover:shadow-[var(--shadow-md)] dark:hover:shadow-[var(--shadow-glow-md)]",
   ].join(" "),
   secondary: [
     "border border-[var(--brand-primary)] text-[var(--brand-primary)]",
@@ -48,6 +48,7 @@ const BASE_CLASSES = [
   "inline-flex items-center justify-center gap-2",
   "rounded-lg",
   "transition-all duration-[var(--duration-normal)] ease-[var(--ease-out)]",
+  "hover:scale-[1.03] active:scale-[0.97]",
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-primary)]",
   "disabled:pointer-events-none disabled:opacity-50",
 ].join(" ");

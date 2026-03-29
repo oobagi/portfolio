@@ -21,8 +21,15 @@ export async function generateMetadata({
   const { meta } = getPost(slug);
 
   return {
-    title: `${meta.title} | Jaden Watson`,
+    title: meta.title,
     description: meta.description,
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      url: `/blog/${slug}`,
+      type: "article",
+      publishedTime: meta.date,
+    },
   };
 }
 
