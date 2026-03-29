@@ -1,8 +1,6 @@
 import type { Project } from "@/lib/github";
 import { Section } from "@/components/ui/section";
-import { SectionHeading } from "@/components/ui/section-heading";
 import { ProjectCard } from "@/components/project-card";
-import { AnimateIn } from "@/components/ui/animate-in";
 
 interface ProjectsSectionProps {
   projects: Project[];
@@ -10,16 +8,10 @@ interface ProjectsSectionProps {
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
-    <Section id="projects">
-      <AnimateIn>
-        <SectionHeading title="Projects" />
-      </AnimateIn>
-
+    <Section id="projects" title="Projects">
       <div className="list-column">
         {projects.map((project, index) => (
-          <AnimateIn key={project.name} delay={index * 80}>
-            <ProjectCard project={project} isLast={index === projects.length - 1} />
-          </AnimateIn>
+          <ProjectCard key={project.name} project={project} isLast={index === projects.length - 1} />
         ))}
       </div>
     </Section>

@@ -1,17 +1,18 @@
-import type { HTMLAttributes } from "react";
-
-interface SectionProps extends HTMLAttributes<HTMLElement> {
+interface SectionProps {
+  id?: string;
+  title?: string;
   children: React.ReactNode;
 }
 
-export function Section({ id, className, children, ...rest }: SectionProps) {
+export function Section({ id, title, children }: SectionProps) {
   return (
-    <section
-      id={id}
-      className={`section${className ? ` ${className}` : ""}`}
-      {...rest}
-    >
-      {children}
+    <section id={id} className="section">
+      {title && (
+        <h2 className="section-label">{title}</h2>
+      )}
+      <div className="section-content">
+        {children}
+      </div>
     </section>
   );
 }

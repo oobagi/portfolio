@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/blog";
-import { SectionHeading } from "@/components/ui/section-heading";
 import { BlogPostList } from "@/components/blog/blog-post-list";
 
 export const metadata: Metadata = {
@@ -19,7 +18,7 @@ export default function BlogPage() {
 
   return (
     <section className="blog-page">
-      <SectionHeading title="Notes" />
+      <h2 className="section-label" style={{ marginBottom: "24px" }}>Notes</h2>
       <BlogPostList posts={posts} />
     </section>
   );

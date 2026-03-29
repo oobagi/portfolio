@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FileText } from "lucide-react";
 import type { BlogPostMeta } from "@/lib/blog";
 
 interface BlogPostCardProps {
@@ -21,9 +22,10 @@ export function BlogPostCard({ post, isLast = false }: BlogPostCardProps) {
       className={`list-item${isLast ? " list-item--last" : ""}`}
     >
       <div className="list-item-row">
-        <h3 className="list-item-title">
-          {post.title}
-        </h3>
+        <span className="list-item-icon-title">
+          <FileText size={14} className="list-item-icon" />
+          <h3 className="list-item-title">{post.title}</h3>
+        </span>
         <time
           dateTime={post.date}
           className="text-xs text-muted"

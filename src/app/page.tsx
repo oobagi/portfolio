@@ -5,9 +5,7 @@ import { ProjectsSection } from "@/components/projects-section";
 import { ContributionsSection } from "@/components/contributions-section";
 import { ContactSection } from "@/components/contact-section";
 import { Section } from "@/components/ui/section";
-import { SectionHeading } from "@/components/ui/section-heading";
 import { BlogPostList } from "@/components/blog/blog-post-list";
-import { AnimateIn } from "@/components/ui/animate-in";
 import Link from "next/link";
 
 export default async function Home() {
@@ -20,11 +18,7 @@ export default async function Home() {
       <ProjectsSection projects={projects} />
 
       {latestPosts.length > 0 && (
-        <Section id="notes">
-          <AnimateIn>
-            <SectionHeading title="Latest Notes" />
-          </AnimateIn>
-
+        <Section id="notes" title="Latest Notes">
           <BlogPostList posts={latestPosts} />
 
           <Link href="/blog" className="section-link">

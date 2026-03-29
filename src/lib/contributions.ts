@@ -20,22 +20,4 @@ export const contributions: Contribution[] = [
     description: "Add workspace tabs — nested tab layer within each workspace",
     state: "open",
   },
-  {
-    repo: "ChicoState/humphrey-come-home",
-    url: "https://github.com/ChicoState/humphrey-come-home/pull/32",
-    description: "Frontend migration: React + Vite + Supabase",
-    state: "open",
-  },
-  {
-    repo: "ChicoState/MyFirstExample",
-    url: "https://github.com/ChicoState/MyFirstExample/pull/371",
-    description: "Added std namespace, resolves issue #341",
-    state: "open",
-  },
-  {
-    repo: "ChicoState/MyFirstExample",
-    url: "https://github.com/ChicoState/MyFirstExample/pull/348",
-    description: "Prevents division by zero error, resolves #61",
-    state: "open",
-  },
 ];
