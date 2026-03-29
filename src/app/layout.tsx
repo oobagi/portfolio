@@ -18,6 +18,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <ThemeScript />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="RSS"
+          href="/feed.xml"
+        />
       </head>
       <body className="font-sans antialiased">
         <Header />
