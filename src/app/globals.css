@@ -1,5 +1,3 @@
-@import "tailwindcss";
-
 /*
  * Design System — Jaden Watson Portfolio
  *
@@ -9,44 +7,7 @@
  */
 
 /* ------------------------------------------------------------------ */
-/* Tailwind v4 Theme Tokens                                           */
-/* ------------------------------------------------------------------ */
-
-@theme {
-  /* --- Font Family: JetBrains Mono only --- */
-  --font-mono: var(--font-jetbrains), ui-monospace, "Fira Code",
-    "Cascadia Code", monospace;
-
-  /* --- Font Size Scale --- */
-  --font-size-xs: 0.75rem;
-  --font-size-xs--line-height: 1.5;
-  --font-size-sm: 0.875rem;
-  --font-size-sm--line-height: 1.714;
-  --font-size-base: 0.875rem;
-  --font-size-base--line-height: 1.714;
-  --font-size-lg: 1rem;
-  --font-size-lg--line-height: 1.625;
-
-  /* --- Letter Spacing --- */
-  --letter-spacing-tighter: -0.04em;
-  --letter-spacing-tight: -0.025em;
-  --letter-spacing-normal: 0em;
-  --letter-spacing-wide: 0.1em;
-
-  /* --- Transition Durations --- */
-  --duration-fast: 100ms;
-  --duration-normal: 200ms;
-  --duration-slow: 350ms;
-
-  /* --- Easing Functions --- */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-
-  /* --- Container --- */
-  --container-content: 560px;
-}
-
-/* ------------------------------------------------------------------ */
-/* CSS Custom Properties: Achromatic + Blue Accent                    */
+/* CSS Custom Properties                                              */
 /* ------------------------------------------------------------------ */
 
 :root {
@@ -57,6 +18,15 @@
   --border: #e5e5e5;
   --accent: #2563eb;
   --mark-bg: #f5f5f5;
+
+  --font-mono: var(--font-jetbrains), ui-monospace, "Fira Code",
+    "Cascadia Code", monospace;
+
+  --duration-fast: 100ms;
+  --duration-normal: 200ms;
+  --duration-slow: 350ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --container-content: 560px;
 }
 
 .dark {
@@ -70,14 +40,20 @@
 }
 
 /* ------------------------------------------------------------------ */
-/* Base Styles                                                        */
+/* Reset                                                              */
 /* ------------------------------------------------------------------ */
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+/* ------------------------------------------------------------------ */
+/* Base                                                               */
+/* ------------------------------------------------------------------ */
 
 html {
   -webkit-font-smoothing: antialiased;
@@ -112,6 +88,31 @@ body {
     color var(--duration-slow);
 }
 
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
 /* ------------------------------------------------------------------ */
 /* Selection & Focus                                                  */
 /* ------------------------------------------------------------------ */
@@ -124,6 +125,640 @@ body {
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Layout                                                             */
+/* ------------------------------------------------------------------ */
+
+.site-wrapper {
+  max-width: var(--container-content);
+  margin: 0 auto;
+  padding: 80px 20px 40px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Header                                                             */
+/* ------------------------------------------------------------------ */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.header-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.header-name:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header-nav-link {
+  font-size: 14px;
+  color: var(--fg-muted);
+  text-decoration: none;
+  transition: color var(--duration-normal);
+}
+
+.header-nav-link:hover {
+  color: var(--fg);
+}
+
+/* ------------------------------------------------------------------ */
+/* Theme Toggle                                                       */
+/* ------------------------------------------------------------------ */
+
+.theme-toggle {
+  color: var(--fg-muted);
+  transition: color var(--duration-normal);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  color: var(--fg);
+}
+
+.theme-toggle-placeholder {
+  width: 20px;
+  height: 20px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Sections                                                           */
+/* ------------------------------------------------------------------ */
+
+.section {
+  margin-top: 80px;
+}
+
+.section:first-child {
+  margin-top: 0;
+}
+
+.section-heading-wrapper {
+  margin-bottom: 24px;
+}
+
+.section-heading {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg-muted);
+}
+
+/* ------------------------------------------------------------------ */
+/* Hero                                                               */
+/* ------------------------------------------------------------------ */
+
+.hero-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+}
+
+@media (min-width: 640px) {
+  .hero-title {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 42px;
+  }
+}
+
+.hero-bio {
+  margin-top: 24px;
+  font-size: 14px;
+  line-height: 1.714;
+  color: var(--fg-muted);
+}
+
+.hero-link {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--fg);
+  text-decoration: none;
+  transition: color var(--duration-normal);
+}
+
+.hero-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+/* ------------------------------------------------------------------ */
+/* List items (shared: projects, posts, contributions)                */
+/* ------------------------------------------------------------------ */
+
+.list-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  display: block;
+  padding: 12px 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.list-item:not(:last-child):not(.list-item--last) {
+  border-bottom: 1px solid var(--border);
+}
+
+.list-item:hover .list-item-title {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+.list-item-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.list-item-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fg);
+}
+
+.list-item-meta {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.list-item-description {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--fg-muted);
+}
+
+/* ------------------------------------------------------------------ */
+/* Contribution items                                                 */
+/* ------------------------------------------------------------------ */
+
+.contribution-item {
+  display: block;
+  padding: 12px 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contribution-item:not(:last-child):not(.list-item--last) {
+  border-bottom: 1px solid var(--border);
+}
+
+.contribution-item:hover .list-item-title {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+.contribution-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.contribution-content {
+  min-width: 0;
+}
+
+.contribution-description {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--fg-muted);
+}
+
+/* ------------------------------------------------------------------ */
+/* PR state icons                                                     */
+/* ------------------------------------------------------------------ */
+
+.pr-icon {
+  flex-shrink: 0;
+}
+
+.pr-icon-merged {
+  color: #a855f7;
+}
+
+.pr-icon-open {
+  color: #22c55e;
+}
+
+.pr-icon-closed {
+  color: #ef4444;
+}
+
+/* ------------------------------------------------------------------ */
+/* Section link (view all / follow on github)                         */
+/* ------------------------------------------------------------------ */
+
+.section-link {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--fg);
+  text-decoration: none;
+  transition: color var(--duration-normal);
+}
+
+.section-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Badge                                                              */
+/* ------------------------------------------------------------------ */
+
+.badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg-muted);
+}
+
+/* ------------------------------------------------------------------ */
+/* Text utilities                                                     */
+/* ------------------------------------------------------------------ */
+
+.text-xs {
+  font-size: 12px;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.text-muted {
+  color: var(--fg-muted);
+}
+
+.text-fg {
+  color: var(--fg);
+}
+
+/* ------------------------------------------------------------------ */
+/* Button                                                             */
+/* ------------------------------------------------------------------ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--accent);
+  color: #ffffff;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity var(--duration-normal);
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* ------------------------------------------------------------------ */
+/* Skeleton                                                           */
+/* ------------------------------------------------------------------ */
+
+.skeleton {
+  background-color: var(--border);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Footer                                                             */
+/* ------------------------------------------------------------------ */
+
+.footer {
+  margin-top: 80px;
+  border-top: 1px solid var(--border);
+  padding-top: 40px;
+  padding-bottom: 24px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 24px;
+  font-size: 14px;
+}
+
+.footer-label {
+  color: var(--fg-muted);
+}
+
+.footer-link {
+  color: var(--fg);
+  text-decoration: none;
+  transition: color var(--duration-normal);
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+.footer-copy {
+  margin-top: 32px;
+  font-size: 12px;
+  color: var(--fg-muted);
+}
+
+/* ------------------------------------------------------------------ */
+/* Contact                                                            */
+/* ------------------------------------------------------------------ */
+
+.contact-text {
+  font-size: 14px;
+  color: var(--fg-muted);
+}
+
+.contact-email {
+  margin-top: 16px;
+  display: inline-block;
+  font-size: 14px;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  transition: opacity var(--duration-normal);
+}
+
+.contact-email:hover {
+  opacity: 0.8;
+}
+
+/* ------------------------------------------------------------------ */
+/* Social Links                                                       */
+/* ------------------------------------------------------------------ */
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.social-link {
+  font-size: 14px;
+  color: var(--fg-muted);
+  text-decoration: none;
+  transition: color var(--duration-normal);
+}
+
+.social-link:hover {
+  color: var(--fg);
+}
+
+/* ------------------------------------------------------------------ */
+/* Blog Post Page                                                     */
+/* ------------------------------------------------------------------ */
+
+.blog-post {
+  margin-top: 80px;
+}
+
+.blog-back-link {
+  font-size: 14px;
+  color: var(--fg-muted);
+  text-decoration: none;
+  transition: color var(--duration-normal);
+}
+
+.blog-back-link:hover {
+  color: var(--fg);
+}
+
+.blog-post-header {
+  margin-top: 32px;
+  margin-bottom: 48px;
+}
+
+.blog-post-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--fg);
+}
+
+@media (min-width: 768px) {
+  .blog-post-title {
+    font-size: 48px;
+  }
+}
+
+.blog-post-meta {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.blog-post-meta-item {
+  font-size: 12px;
+  color: var(--fg-muted);
+}
+
+.blog-post-meta-dot {
+  color: var(--fg-muted);
+}
+
+/* ------------------------------------------------------------------ */
+/* Blog page                                                          */
+/* ------------------------------------------------------------------ */
+
+.blog-page {
+  margin-top: 80px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Empty state                                                        */
+/* ------------------------------------------------------------------ */
+
+.empty-state {
+  font-size: 14px;
+  color: var(--fg-muted);
+}
+
+/* ------------------------------------------------------------------ */
+/* MDX Components                                                     */
+/* ------------------------------------------------------------------ */
+
+.mdx-h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--fg);
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+.mdx-h2 {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg-muted);
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+.mdx-h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fg);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.mdx-p {
+  font-size: 14px;
+  line-height: 1.714;
+  color: var(--fg);
+  margin-bottom: 20px;
+}
+
+.mdx-ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  color: var(--fg);
+}
+
+.mdx-ul > li + li {
+  margin-top: 4px;
+}
+
+.mdx-ol {
+  list-style: decimal;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  color: var(--fg);
+}
+
+.mdx-ol > li + li {
+  margin-top: 4px;
+}
+
+.mdx-li {
+  font-size: 14px;
+  line-height: 1.714;
+}
+
+.mdx-a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  transition: opacity var(--duration-fast);
+}
+
+.mdx-a:hover {
+  opacity: 0.8;
+}
+
+.mdx-blockquote {
+  margin: 24px 0;
+  font-size: 14px;
+  color: var(--fg-muted);
+}
+
+.mdx-blockquote p::before {
+  content: "\00BB\0020";
+  color: var(--fg-muted);
+}
+
+.mdx-hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+.mdx-strong {
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.mdx-code {
+  background-color: var(--mark-bg);
+  padding: 2px 6px;
+  font-size: 13px;
+}
+
+.mdx-pre {
+  background-color: var(--bg-secondary);
+  padding: 16px 20px;
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 24px 0;
+}
+
+.mdx-pre code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
 }
 
 /* ------------------------------------------------------------------ */

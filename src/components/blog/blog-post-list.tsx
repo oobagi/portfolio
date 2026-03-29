@@ -8,14 +8,14 @@ interface BlogPostListProps {
 export function BlogPostList({ posts }: BlogPostListProps) {
   if (posts.length === 0) {
     return (
-      <p className="text-sm text-[var(--fg-muted)]">
+      <p className="empty-state">
         No posts yet. Check back soon.
       </p>
     );
   }
 
   return (
-    <div className="flex flex-col">
+    <div className="list-column">
       {posts.map((post, index) => (
         <BlogPostCard
           key={post.slug}

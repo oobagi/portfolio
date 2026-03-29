@@ -8,13 +8,13 @@ export function ContactSection() {
       <AnimateIn>
         <SectionHeading title="Get in touch" />
 
-        <p className="text-sm text-[var(--fg-muted)]">
+        <p className="contact-text">
           I&apos;m always open to interesting conversations and opportunities.
         </p>
 
         <a
           href="mailto:jadenwatsond@gmail.com"
-          className="mt-4 inline-block text-sm text-[var(--accent)] underline underline-offset-2 decoration-1 transition-opacity duration-200 hover:opacity-80"
+          className="contact-email"
         >
           jadenwatsond@gmail.com
         </a>

@@ -19,14 +19,14 @@ export function ThemeToggle() {
   }, [dark]);
 
   if (!mounted) {
-    return <div className="h-5 w-5" aria-hidden="true" />;
+    return <div className="theme-toggle-placeholder" aria-hidden="true" />;
   }
 
   return (
     <button
       type="button"
       onClick={toggle}
-      className="text-[var(--fg-muted)] transition-colors duration-200 hover:text-[var(--fg)]"
+      className="theme-toggle"
       aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
     >
       {dark ? (

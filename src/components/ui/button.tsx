@@ -17,23 +17,13 @@ type ButtonAsLink = ButtonBaseProps &
 
 export type ButtonProps = ButtonAsButton | ButtonAsLink;
 
-const BASE_CLASSES = [
-  "inline-flex items-center justify-center gap-2",
-  "bg-[var(--accent)] text-white",
-  "px-4 py-1.5 text-sm font-medium",
-  "transition-opacity duration-200",
-  "hover:opacity-80",
-  "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]",
-  "disabled:pointer-events-none disabled:opacity-50",
-].join(" ");
-
 function isLink(props: ButtonProps): props is ButtonAsLink {
   return props.href !== undefined;
 }
 
 export function Button(props: ButtonProps) {
   const { className, children, ...rest } = props;
-  const classes = `${BASE_CLASSES} ${className ?? ""}`;
+  const classes = `btn${className ? ` ${className}` : ""}`;
 
   if (isLink(props)) {
     const { href, ...anchorRest } = rest as Omit<

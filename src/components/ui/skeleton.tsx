@@ -7,7 +7,7 @@ interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
 export function Skeleton({ className, ...rest }: SkeletonProps) {
   return (
     <div
-      className={`animate-pulse bg-[var(--border)] ${className ?? ""}`}
+      className={`skeleton${className ? ` ${className}` : ""}`}
       aria-hidden="true"
       {...rest}
     />

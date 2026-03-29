@@ -8,7 +8,7 @@ export function Section({ id, className, children, ...rest }: SectionProps) {
   return (
     <section
       id={id}
-      className={`mt-20 ${className ?? ""}`}
+      className={`section${className ? ` ${className}` : ""}`}
       {...rest}
     >
       {children}

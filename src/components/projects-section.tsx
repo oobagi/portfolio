@@ -15,7 +15,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
         <SectionHeading title="Projects" />
       </AnimateIn>
 
-      <div className="flex flex-col">
+      <div className="list-column">
         {projects.map((project, index) => (
           <AnimateIn key={project.name} delay={index * 80}>
             <ProjectCard project={project} isLast={index === projects.length - 1} />

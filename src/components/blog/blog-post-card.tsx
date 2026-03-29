@@ -18,21 +18,22 @@ export function BlogPostCard({ post, isLast = false }: BlogPostCardProps) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className={`block py-4 group ${isLast ? "" : "border-b border-[var(--border)]"}`}
+      className={`list-item${isLast ? " list-item--last" : ""}`}
     >
-      <div className="flex items-baseline justify-between gap-4">
-        <h3 className="text-sm font-medium text-[var(--fg)] transition-colors duration-200 group-hover:text-[var(--accent)]">
+      <div className="list-item-row">
+        <h3 className="list-item-title">
           {post.title}
         </h3>
         <time
           dateTime={post.date}
-          className="shrink-0 text-xs text-[var(--fg-muted)]"
+          className="text-xs text-muted"
+          style={{ flexShrink: 0 }}
         >
           {formatDate(post.date)}
         </time>
       </div>
       {post.description && (
-        <p className="mt-1 text-sm text-[var(--fg-muted)]">
+        <p className="list-item-description">
           {post.description}
         </p>
       )}

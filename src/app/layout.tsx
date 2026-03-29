@@ -59,8 +59,8 @@ export default function RootLayout({
       <head>
         <ThemeScript />
       </head>
-      <body className="font-mono antialiased">
-        <div className="mx-auto max-w-[var(--container-content)] px-5 pt-20 pb-10">
+      <body>
+        <div className="site-wrapper">
           <Header />
           <main>{children}</main>
           <Footer />

@@ -7,7 +7,7 @@ interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 export function Badge({ className, children, ...rest }: BadgeProps) {
   return (
     <span
-      className={`text-[11px] uppercase tracking-[0.1em] text-[var(--fg-muted)] ${className ?? ""}`}
+      className={`badge${className ? ` ${className}` : ""}`}
       {...rest}
     >
       {children}

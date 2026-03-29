@@ -19,14 +19,14 @@ export const DEFAULT_SOCIAL_LINKS: SocialLink[] = [
 export function SocialLinks({ links }: SocialLinksProps) {
   return (
     <nav aria-label="Social links">
-      <ul className="flex items-center gap-6">
+      <ul className="social-links">
         {links.map((link) => (
           <li key={link.platform}>
             <a
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-[var(--fg-muted)] transition-colors duration-200 hover:text-[var(--fg)]"
+              className="social-link"
             >
               {link.handle}
             </a>

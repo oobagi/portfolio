@@ -46,26 +46,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { meta, content } = getPost(slug);
 
   return (
-    <article className="mt-20">
-      <Link
-        href="/blog"
-        className="text-sm text-[var(--fg-muted)] transition-colors duration-200 hover:text-[var(--fg)]"
-      >
+    <article className="blog-post">
+      <Link href="/blog" className="blog-back-link">
         &larr; Back
       </Link>
 
-      <header className="mt-8 mb-12">
-        <h1 className="text-[36px] font-bold leading-[1.1] tracking-[-0.04em] text-[var(--fg)] md:text-[48px]">
+      <header className="blog-post-header">
+        <h1 className="blog-post-title">
           {meta.title}
         </h1>
-        <div className="mt-4 flex items-center gap-3">
-          <time dateTime={meta.date} className="text-xs text-[var(--fg-muted)]">
+        <div className="blog-post-meta">
+          <time dateTime={meta.date} className="blog-post-meta-item">
             {formatDate(meta.date)}
           </time>
-          <span className="text-[var(--fg-muted)]" aria-hidden="true">
+          <span className="blog-post-meta-dot" aria-hidden="true">
             &middot;
           </span>
-          <span className="text-xs text-[var(--fg-muted)]">
+          <span className="blog-post-meta-item">
             {meta.readingTime}
           </span>
         </div>

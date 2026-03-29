@@ -18,7 +18,7 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <section className="mt-20">
+    <section className="blog-page">
       <SectionHeading title="Notes" />
       <BlogPostList posts={posts} />
     </section>

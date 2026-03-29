@@ -8,25 +8,23 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, isLast = false }: ProjectCardProps) {
   return (
-    <div
-      className={`py-4 ${isLast ? "" : "border-b border-[var(--border)]"}`}
+    <a
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`list-item${isLast ? " list-item--last" : ""}`}
     >
-      <div className="flex items-baseline justify-between gap-4">
-        <a
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm font-medium text-[var(--fg)] transition-colors duration-200 hover:text-[var(--accent)]"
-        >
+      <div className="list-item-row">
+        <span className="list-item-title">
           {project.name}
-        </a>
+        </span>
 
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="list-item-meta">
           {project.language && (
             <Badge>{project.language}</Badge>
           )}
           {project.stars > 0 && (
-            <span className="text-xs text-[var(--fg-muted)]">
+            <span className="text-xs text-muted">
               {project.stars} stars
             </span>
           )}
@@ -34,10 +32,10 @@ export function ProjectCard({ project, isLast = false }: ProjectCardProps) {
       </div>
 
       {project.description && (
-        <p className="mt-1 text-sm text-[var(--fg-muted)]">
+        <p className="list-item-description">
           {project.description}
         </p>
       )}
-    </div>
+    </a>
   );
 }

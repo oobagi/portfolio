@@ -10,8 +10,8 @@ export function SectionHeading({
   ...rest
 }: SectionHeadingProps) {
   return (
-    <div className={`mb-6 ${className ?? ""}`} {...rest}>
-      <h2 className="text-xs font-medium uppercase tracking-[0.1em] text-[var(--fg-muted)]">
+    <div className={`section-heading-wrapper${className ? ` ${className}` : ""}`} {...rest}>
+      <h2 className="section-heading">
         {title}
       </h2>
     </div>
