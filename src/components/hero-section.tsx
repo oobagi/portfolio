@@ -6,41 +6,23 @@ export function HeroSection() {
   return (
     <Section id="hero">
       <AnimateIn>
-        <h1 className="text-[64px] font-bold leading-[1] tracking-[-0.04em] text-[var(--fg)] md:text-[96px]">
-          Jaden
-          <br />
-          Watson
-        </h1>
+        <h2 className="text-[28px] font-bold leading-[1.2] tracking-[-0.03em] text-[var(--fg)] sm:text-[36px] md:text-[42px]">
+          Developer building AI&#8209;powered tools and macOS utilities for humans and agents.
+        </h2>
 
-        <p className="mt-6 text-sm leading-[1.714] text-[var(--fg-muted)]">
-          Developer focused on AI-powered tools and macOS utilities.
+        <p className="mt-6 text-sm leading-relaxed text-[var(--fg-muted)]">
           I like shipping software that solves real problems with clean,
-          thoughtful interfaces.
+          thoughtful interfaces. Currently exploring the edges of what&apos;s
+          possible with language models and developer tooling.
         </p>
 
-        <p className="mt-4 text-sm leading-[1.714] text-[var(--fg-muted)]">
-          Currently building developer tools and exploring the edges of
-          what&apos;s possible with language models.
-        </p>
-
-        <div className="mt-8 flex items-center gap-6">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 bg-[var(--accent)] px-4 py-1.5 text-sm font-medium text-white transition-opacity duration-200 hover:opacity-80"
-          >
-            View blog
-            <span aria-hidden="true">&rarr;</span>
-          </Link>
-
-          <a
-            href="https://github.com/oobagi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-[var(--fg-muted)] transition-colors duration-200 hover:text-[var(--fg)]"
-          >
-            @oobagi
-          </a>
-        </div>
+        <Link
+          href="/blog"
+          className="mt-6 inline-flex items-center gap-2 text-sm text-[var(--fg)] transition-colors duration-200 hover:text-[var(--accent)]"
+        >
+          View notes
+          <span aria-hidden="true">&rarr;</span>
+        </Link>
       </AnimateIn>
     </Section>
   );

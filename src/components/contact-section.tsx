@@ -13,10 +13,10 @@ export function ContactSection() {
         </p>
 
         <a
-          href="mailto:jadenwatson3@gmail.com"
+          href="mailto:jadenwatsond@gmail.com"
           className="mt-4 inline-block text-sm text-[var(--accent)] underline underline-offset-2 decoration-1 transition-opacity duration-200 hover:opacity-80"
         >
-          jadenwatson3@gmail.com
+          jadenwatsond@gmail.com
         </a>
       </AnimateIn>
     </Section>
