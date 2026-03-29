@@ -12,13 +12,13 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
     <Section id="projects">
       <AnimateIn>
-        <SectionHeading title="Projects" subtitle="Things I've built" />
+        <SectionHeading title="Projects" />
       </AnimateIn>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="flex flex-col">
         {projects.map((project, index) => (
-          <AnimateIn key={project.name} delay={index * 100}>
-            <ProjectCard project={project} />
+          <AnimateIn key={project.name} delay={index * 80}>
+            <ProjectCard project={project} isLast={index === projects.length - 1} />
           </AnimateIn>
         ))}
       </div>

@@ -8,7 +8,7 @@ export function Section({ id, className, children, ...rest }: SectionProps) {
   return (
     <section
       id={id}
-      className={`mx-auto max-w-[var(--container-content)] px-6 py-20 md:py-28 ${className ?? ""}`}
+      className={`mt-20 ${className ?? ""}`}
       {...rest}
     >
       {children}

@@ -1,178 +1,108 @@
 # Design System
 
-> Warm, technical, distinctive. Amber/gold primary accent evoking terminal cursor warmth. Dark mode is the primary experience. Warm stone neutrals throughout — no cold grays.
+> Monospace minimalism with oversized display text. Terminal/IDE aesthetic with bold typographic moments. Achromatic palette + blue accent. The site feels like a beautifully typeset plaintext document with dramatic headings.
 
-## Colors
+## Font
 
-### Brand
-
-| Token | Light | Dark | Usage |
-|-------|-------|------|-------|
-| `primary` | `#B45309` (700) | `#F59E0B` (500) | CTAs, links, active states |
-| `secondary` | `#4D7C0F` (700) | `#84CC16` (500) | Tags, badges, secondary actions |
-| `accent` | `#9333EA` (600) | `#A855F7` (500) | Code types, highlights, special states |
-
-### Semantic
-
-| Token | Light | Dark |
-|-------|-------|------|
-| `success` | `#16A34A` | `#4ADE80` |
-| `warning` | `#CA8A04` | `#FACC15` |
-| `error` | `#DC2626` | `#F87171` |
-| `info` | `#2563EB` | `#60A5FA` |
-
-### Neutrals (Warm Stone)
-
-| Step | Hex | Light Usage | Dark Usage |
-|------|-----|-------------|------------|
-| 50 | `#FAFAF9` | Page bg | Text primary |
-| 100 | `#F5F5F4` | Cards, surfaces | — |
-| 200 | `#E7E5E4` | Borders | — |
-| 400 | `#A8A29E` | — | Text secondary |
-| 500 | `#78716C` | Text secondary | Text muted |
-| 600 | `#57534E` | Text secondary | — |
-| 700 | `#44403C` | — | Borders (elevated) |
-| 800 | `#292524` | — | Cards, elevated surfaces |
-| 900 | `#1C1917` | — | Primary surface |
-| 950 | `#0C0A09` | — | Page bg |
-
-### Dark Mode: Semantic Surfaces
-
-Dark mode uses background lightness steps for elevation (950 → 900 → 800), not box-shadows. The `.dark` class on `<html>` remaps CSS custom properties — no `dark:` prefix needed in markup.
-
-| Token | Value | Purpose |
-|-------|-------|---------|
-| `--bg-primary` | `#0C0A09` | Page background |
-| `--bg-secondary` | `#1C1917` | Cards, nav |
-| `--bg-elevated` | `#292524` | Modals, dropdowns |
+**JetBrains Mono** is the only font. Everything is monospace. Loaded via `next/font/google` as `--font-jetbrains`, mapped to `--font-mono` in the theme.
 
 ## Typography
 
-**Inter** (variable, 100-900) for headings and body. **JetBrains Mono** (variable) for code, nav, tags, dates.
+| Element | Size | Weight | Tracking | Color | Notes |
+|---------|------|--------|----------|-------|-------|
+| Hero name | 64px / 96px | 700 | -0.04em | `--fg` | THE signature. Oversized display. |
+| Blog post title | 36px / 48px | 700 | -0.04em | `--fg` | Same dramatic style, slightly smaller |
+| Section heading (h2) | 12px | 500 | 0.1em | `--fg-muted` | UPPERCASE, small label style |
+| Subheading (h3) | 14px | 500 | 0 | `--fg` | Same size as body, heavier weight |
+| Body text | 14px | 400 | 0 | `--fg` | Line-height 1.714 (24px) |
+| Small/meta | 12px | 400 | 0 | `--fg-muted` | Dates, reading time, captions |
+| Badge | 11px | 400 | 0.1em | `--fg-muted` | UPPERCASE, no background |
 
-| Token | Size | Weight | Line Height | Usage |
-|-------|------|--------|-------------|-------|
-| `6xl` | 60px | 700 | 1.05 | Hero display (desktop) |
-| `5xl` | 48px | 700 | 1.1 | Hero display (mobile) |
-| `4xl` | 36px | 700 | 1.2 | Hero heading |
-| `3xl` | 30px | 700 | 1.25 | Section headings |
-| `2xl` | 24px | 600 | 1.35 | Section subtitles |
-| `xl` | 20px | 600 | 1.5 | Card titles |
-| `lg` | 18px | 400 | 1.6 | Lead paragraphs |
-| `base` | 16px | 400 | 1.625 | Body text |
-| `sm` | 14px | 500 | 1.5 | Metadata, timestamps |
-| `xs` | 12px | 400 | 1.5 | Captions |
+The dramatic contrast between the oversized hero name and the small, muted section labels defines the visual identity.
 
-Headings use progressively tighter letter-spacing as size increases. Mono font used for: code, file paths, terminal output, nav items, project tags, dates.
+## Colors
 
-## Spacing
+Fully achromatic with one accent color for links and CTAs.
 
-Base unit: 4px. Uses Tailwind defaults plus custom section tokens:
+### Light
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| `--spacing-section` | 80px (`py-20`) | Vertical gap between sections |
-| `--spacing-section-md` | 112px (`py-28`) | Section gap at md+ |
-| `--spacing-content` | 24px (`px-6`) | Horizontal page padding |
+| `--bg` | `#ffffff` | Page background |
+| `--bg-secondary` | `#fafafa` | Code blocks, secondary surfaces |
+| `--fg` | `#0a0a0a` | Primary text |
+| `--fg-muted` | `#737373` | Secondary text, labels, meta |
+| `--border` | `#e5e5e5` | Separators, borders |
+| `--accent` | `#2563eb` | Links, CTAs, focus rings |
+| `--mark-bg` | `#f5f5f5` | Inline code background |
 
-## Containers
+### Dark
 
-| Context | Max Width | Usage |
-|---------|-----------|-------|
-| Prose | 680px | Blog content (~65ch) |
-| Content | 1024px | Project grid, main content |
-| Page | 1280px | Overall page container |
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--bg` | `#0a0a0a` | Page background |
+| `--bg-secondary` | `#141414` | Code blocks, secondary surfaces |
+| `--fg` | `#fafafa` | Primary text |
+| `--fg-muted` | `#a3a3a3` | Secondary text, labels, meta |
+| `--border` | `#262626` | Separators, borders |
+| `--accent` | `#3b82f6` | Links, CTAs, focus rings |
+| `--mark-bg` | `#1a1a1a` | Inline code background |
 
-## Effects
+## Layout
 
-### Shadows
+| Property | Value |
+|----------|-------|
+| Max content width | 560px |
+| Body top padding | 80px (pt-20) |
+| Body bottom padding | 40px (pb-10) |
+| Horizontal padding | 20px (px-5) |
+| Section spacing | 80px (mt-20) between sections |
+| Header to content | 80px (mb-20) |
 
-Light mode: warm-tinted (`rgba(28, 25, 23, ...)`). Dark mode: deep black (`rgba(0, 0, 0, ...)`).
-
-### Glow (Dark Mode)
-
-Warm amber glow for interactive elements: `glow-sm`, `glow-md`, `glow-lg` using primary-500 (`#F59E0B`).
-
-### Transitions
-
-| Token | Duration | Usage |
-|-------|----------|-------|
-| `fast` | 100ms | Color, opacity |
-| `normal` | 200ms | Hover states |
-| `slow` | 350ms | Panels, theme toggle |
-| `slower` | 500ms | Page transitions |
-
-Easing: `ease-out` (enter), `ease-in` (exit), `ease-both` (symmetrical), `spring` (bouncy micro-interactions).
+The narrow column (560px) with generous whitespace creates a reading-optimized experience.
 
 ## Components
 
-### Primitives
+### Header
+Simple flex row: name link (left) + "Notes" link + theme toggle (right). 14px, no sticky, no blur, no mobile menu.
 
-| Component | Variants | States |
-|-----------|----------|--------|
-| `Button` | primary, secondary, ghost × sm, md | default, hover, focus-visible, disabled |
-| `IconButton` | — | default, hover, focus-visible |
-| `Badge` | — | static |
-| `Skeleton` | — | pulsing animation |
-| `Avatar` | sm, lg | loaded, loading (skeleton), error (initials fallback) |
-| `SectionHeading` | — | — |
-| `ThemeToggle` | — | light-active, dark-active |
+### Footer
+Definition list (`<dl>`) with @handle-style social links. Year/copyright line below.
 
-### Composites
+### Hero Section
+Oversized name (64px mobile, 96px desktop) with tight tracking. Bio in muted 14px below. Blue pill CTA "View blog" + text social handle.
 
-| Component | States |
-|-----------|--------|
-| `ProjectCard` | default, hover (lift + border accent), loading (skeleton) |
-| `ProjectGrid` | loading (6 skeletons), error (message + retry), empty, success |
-| `BlogPostCard` | default, hover (title color shift) |
-| `BlogPostList` | empty ("No posts yet"), populated |
-| `HeroSection` | static |
-| `ContactSection` | static |
-| `SocialLinks` | static row of IconButtons |
+### Projects
+Small uppercase "Projects" label. List of items separated by 1px border lines. Each item: name (linked, 14px medium), language badge (11px uppercase), star count, description.
 
-### Layout
+### Blog Listing
+Small uppercase "Notes" label. List of posts separated by borders. Title (14px medium) + date (12px muted).
 
-| Component | Purpose |
-|-----------|---------|
-| `Header` | Nav links + ThemeToggle |
-| `Footer` | Copyright + social links |
-| `Section` | Consistent section wrapper (`mx-auto max-w-5xl px-6 py-20 md:py-28`) |
-| `PageLayout` | Header + main + Footer |
-| `BlogPostLayout` | Prose constraint + optional ToC sidebar at lg+ |
+### Blog Post
+Oversized title (36-48px). Date + reading time (12px muted). Body in prose style. Back link at top.
 
-## Layout Patterns
+### UI Primitives
+- **Button**: Blue bg, white text, square (no border-radius), 14px
+- **Badge**: Text-only, 11px uppercase letter-spaced, muted color
+- **Section**: Margin-top wrapper (mt-20)
+- **SectionHeading**: 12px uppercase muted letter-spaced label
+- **Skeleton**: Pulsing with `--border` color
+- **AnimateIn**: Intersection Observer fade-in-up
 
-### Breakpoints
+## Dark Mode
 
-| Breakpoint | Width | Grid Columns |
-|------------|-------|-------------|
-| Default | <640px | 1 col |
-| `md` | 768px | 2 col project grid |
-| `lg` | 1024px | 3 col project grid, blog gets ToC sidebar |
-| `xl` | 1280px | Max width, content centers |
+`.dark` class on `<html>` + localStorage. Blocking `<script>` in `<head>` prevents FOUC. Semantic CSS variables remap under `.dark`.
 
-### Page Templates
+## Prose/Blog Styles
 
-**Home:** `Hero → Projects → Contact` (single-page scroll, anchor nav)
-**Blog Listing:** `SectionHeading → BlogPostList`
-**Blog Post:** `BlogPostLayout (prose + ToC sidebar at lg+)`
-
-## State Patterns
-
-Use discriminated union: `{ status: 'loading' | 'error' | 'empty' | 'success' }`. Blog posts are static MDX (no runtime loading/error). Project grid fetches at build time but keeps loading/error states for dev experience.
-
-## Dark Mode Architecture
-
-Theme toggle uses `.dark` class on `<html>` + `localStorage`. Blocking `<script>` in `<head>` prevents flash. Semantic CSS variables remap under `.dark` — no `dark:` prefix needed in component markup.
+- Links: underlined with `--accent` color
+- Code blocks: `--bg-secondary` background, no border, no border-radius
+- Inline code: `--mark-bg` background, minimal padding
+- Blockquotes: prefixed with right-pointing double angle (>>) character, no left border
 
 ## Accessibility
 
-- All text meets WCAG AA (4.5:1 body, 3:1 large). Primary amber on dark bg: 7.2:1.
-- `prefers-reduced-motion` disables all animations.
-- `focus-visible` ring on all interactive elements (2px solid, primary color).
-- No color as sole state indicator.
-
-## References
-
-- Full token reference: `docs/design-system.md`
-- Implementation: `src/app/globals.css` (Tailwind v4 `@theme` + CSS custom properties)
+- All text meets WCAG AA contrast ratios
+- `prefers-reduced-motion` disables all animations
+- `focus-visible` ring on all interactive elements (2px solid, accent color)
+- Semantic HTML throughout (nav, article, header, footer, dl)
