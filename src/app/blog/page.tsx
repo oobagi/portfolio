@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/blog";
-import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { BlogPostList } from "@/components/blog/blog-post-list";
 
@@ -19,12 +18,9 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <Section>
-      <SectionHeading
-        title="Blog"
-        subtitle="Thoughts on development, AI, and the tools I'm building."
-      />
+    <section className="mt-20">
+      <SectionHeading title="Notes" />
       <BlogPostList posts={posts} />
-    </Section>
+    </section>
   );
 }

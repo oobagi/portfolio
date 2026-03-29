@@ -1,13 +1,11 @@
 @import "tailwindcss";
 
 /*
- * Design System Tokens — Jaden Watson Portfolio
+ * Design System — Jaden Watson Portfolio
  *
- * Color philosophy: Amber/warm gold primary (terminal cursor warmth),
- * sage green secondary, purple accent. Warm stone neutrals throughout.
- * Dark mode is the primary experience.
- *
- * See docs/design-system.md for rationale and usage guidelines.
+ * Monospace minimalism with oversized display text.
+ * Achromatic palette + blue accent. JetBrains Mono everywhere.
+ * Narrow column (560px), generous whitespace.
  */
 
 /* ------------------------------------------------------------------ */
@@ -15,9 +13,7 @@
 /* ------------------------------------------------------------------ */
 
 @theme {
-  /* --- Font Families (powered by next/font/google via CSS variables) --- */
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
-    sans-serif;
+  /* --- Font Family: JetBrains Mono only --- */
   --font-mono: var(--font-jetbrains), ui-monospace, "Fira Code",
     "Cascadia Code", monospace;
 
@@ -25,198 +21,52 @@
   --font-size-xs: 0.75rem;
   --font-size-xs--line-height: 1.5;
   --font-size-sm: 0.875rem;
-  --font-size-sm--line-height: 1.5;
-  --font-size-base: 1rem;
-  --font-size-base--line-height: 1.625;
-  --font-size-lg: 1.125rem;
-  --font-size-lg--line-height: 1.6;
-  --font-size-xl: 1.25rem;
-  --font-size-xl--line-height: 1.5;
-  --font-size-2xl: 1.5rem;
-  --font-size-2xl--line-height: 1.35;
-  --font-size-3xl: 1.875rem;
-  --font-size-3xl--line-height: 1.25;
-  --font-size-4xl: 2.25rem;
-  --font-size-4xl--line-height: 1.2;
-  --font-size-5xl: 3rem;
-  --font-size-5xl--line-height: 1.1;
-  --font-size-6xl: 3.75rem;
-  --font-size-6xl--line-height: 1.05;
+  --font-size-sm--line-height: 1.714;
+  --font-size-base: 0.875rem;
+  --font-size-base--line-height: 1.714;
+  --font-size-lg: 1rem;
+  --font-size-lg--line-height: 1.625;
 
   /* --- Letter Spacing --- */
   --letter-spacing-tighter: -0.04em;
   --letter-spacing-tight: -0.025em;
-  --letter-spacing-snug: -0.015em;
   --letter-spacing-normal: 0em;
-  --letter-spacing-wide: 0.015em;
-  --letter-spacing-wider: 0.025em;
-
-  /* --- Brand Colors: Primary (Amber) --- */
-  --color-primary-50: #fffbeb;
-  --color-primary-100: #fef3c7;
-  --color-primary-200: #fde68a;
-  --color-primary-300: #fcd34d;
-  --color-primary-400: #fbbf24;
-  --color-primary-500: #f59e0b;
-  --color-primary-600: #d97706;
-  --color-primary-700: #b45309;
-  --color-primary-800: #92400e;
-  --color-primary-900: #78350f;
-  --color-primary-950: #451a03;
-
-  /* --- Brand Colors: Secondary (Lime/Sage) --- */
-  --color-secondary-50: #f7fee7;
-  --color-secondary-100: #ecfccb;
-  --color-secondary-200: #d9f99d;
-  --color-secondary-300: #bef264;
-  --color-secondary-400: #a3e635;
-  --color-secondary-500: #84cc16;
-  --color-secondary-600: #65a30d;
-  --color-secondary-700: #4d7c0f;
-  --color-secondary-800: #3f6212;
-  --color-secondary-900: #365314;
-  --color-secondary-950: #1a2e05;
-
-  /* --- Brand Colors: Accent (Purple) --- */
-  --color-accent-50: #faf5ff;
-  --color-accent-100: #f3e8ff;
-  --color-accent-200: #e9d5ff;
-  --color-accent-300: #d8b4fe;
-  --color-accent-400: #c084fc;
-  --color-accent-500: #a855f7;
-  --color-accent-600: #9333ea;
-  --color-accent-700: #7e22ce;
-  --color-accent-800: #6b21a8;
-  --color-accent-900: #581c87;
-  --color-accent-950: #3b0764;
-
-  /* --- Neutral Scale (Warm Stone) --- */
-  --color-neutral-50: #fafaf9;
-  --color-neutral-100: #f5f5f4;
-  --color-neutral-200: #e7e5e4;
-  --color-neutral-300: #d6d3d1;
-  --color-neutral-400: #a8a29e;
-  --color-neutral-500: #78716c;
-  --color-neutral-600: #57534e;
-  --color-neutral-700: #44403c;
-  --color-neutral-800: #292524;
-  --color-neutral-900: #1c1917;
-  --color-neutral-950: #0c0a09;
-
-  /* --- Semantic Colors --- */
-  --color-success: #4ade80;
-  --color-warning: #facc15;
-  --color-error: #f87171;
-  --color-info: #60a5fa;
-
-  /* --- Border Radii --- */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
-  --radius-full: 9999px;
-
-  /* --- Shadows (Light Mode) --- */
-  --shadow-sm: 0 1px 2px 0 rgba(28, 25, 23, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(28, 25, 23, 0.07),
-    0 2px 4px -2px rgba(28, 25, 23, 0.05);
-  --shadow-lg: 0 10px 15px -3px rgba(28, 25, 23, 0.08),
-    0 4px 6px -4px rgba(28, 25, 23, 0.04);
-  --shadow-xl: 0 20px 25px -5px rgba(28, 25, 23, 0.1),
-    0 8px 10px -6px rgba(28, 25, 23, 0.05);
-
-  /* --- Glow Effects (used in dark mode) --- */
-  --shadow-glow-sm: 0 0 8px rgba(245, 158, 11, 0.15);
-  --shadow-glow-md: 0 0 16px rgba(245, 158, 11, 0.2);
-  --shadow-glow-lg: 0 0 32px rgba(245, 158, 11, 0.25);
+  --letter-spacing-wide: 0.1em;
 
   /* --- Transition Durations --- */
   --duration-fast: 100ms;
   --duration-normal: 200ms;
   --duration-slow: 350ms;
-  --duration-slower: 500ms;
 
   /* --- Easing Functions --- */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
-  --ease-both: cubic-bezier(0.87, 0, 0.13, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  /* --- Container Widths --- */
-  --container-prose: 680px;
-  --container-content: 1024px;
-  --container-page: 1280px;
+  /* --- Container --- */
+  --container-content: 560px;
 }
 
 /* ------------------------------------------------------------------ */
-/* CSS Custom Properties: Semantic Surface & Text Tokens              */
-/* These switch between light/dark via the .dark class on <html>      */
+/* CSS Custom Properties: Achromatic + Blue Accent                    */
 /* ------------------------------------------------------------------ */
 
 :root {
-  /* Surface */
-  --bg-primary: var(--color-neutral-50);
-  --bg-secondary: var(--color-neutral-100);
-  --bg-elevated: #ffffff;
-  --bg-code: var(--color-neutral-100);
-
-  /* Borders */
-  --border-primary: var(--color-neutral-200);
-  --border-secondary: var(--color-neutral-300);
-
-  /* Text */
-  --text-primary: var(--color-neutral-900);
-  --text-secondary: var(--color-neutral-600);
-  --text-muted: var(--color-neutral-500);
-
-  /* Brand (context-aware) */
-  --brand-primary: var(--color-primary-700);
-  --brand-secondary: var(--color-secondary-700);
-  --brand-accent: var(--color-accent-600);
-
-  /* Semantic */
-  --color-success: #16a34a;
-  --color-warning: #ca8a04;
-  --color-error: #dc2626;
-  --color-info: #2563eb;
+  --bg: #ffffff;
+  --bg-secondary: #fafafa;
+  --fg: #0a0a0a;
+  --fg-muted: #737373;
+  --border: #e5e5e5;
+  --accent: #2563eb;
+  --mark-bg: #f5f5f5;
 }
 
 .dark {
-  /* Surface */
-  --bg-primary: var(--color-neutral-950);
-  --bg-secondary: var(--color-neutral-900);
-  --bg-elevated: var(--color-neutral-800);
-  --bg-code: var(--color-neutral-900);
-
-  /* Borders */
-  --border-primary: var(--color-neutral-800);
-  --border-secondary: var(--color-neutral-700);
-
-  /* Text */
-  --text-primary: var(--color-neutral-50);
-  --text-secondary: var(--color-neutral-400);
-  --text-muted: var(--color-neutral-500);
-
-  /* Brand (context-aware — brighter for dark backgrounds) */
-  --brand-primary: var(--color-primary-500);
-  --brand-secondary: var(--color-secondary-500);
-  --brand-accent: var(--color-accent-500);
-
-  /* Semantic */
-  --color-success: #4ade80;
-  --color-warning: #facc15;
-  --color-error: #f87171;
-  --color-info: #60a5fa;
-
-  /* Dark mode shadows override — deeper, more opaque */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4),
-    0 2px 4px -2px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5),
-    0 4px 6px -4px rgba(0, 0, 0, 0.35);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6),
-    0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  --bg: #0a0a0a;
+  --bg-secondary: #141414;
+  --fg: #fafafa;
+  --fg-muted: #a3a3a3;
+  --border: #262626;
+  --accent: #3b82f6;
+  --mark-bg: #1a1a1a;
 }
 
 /* ------------------------------------------------------------------ */
@@ -252,10 +102,11 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.625;
+  font-family: var(--font-mono);
+  background-color: var(--bg);
+  color: var(--fg);
+  font-size: 14px;
+  line-height: 1.714;
   transition:
     background-color var(--duration-slow),
     color var(--duration-slow);
@@ -266,70 +117,139 @@ body {
 /* ------------------------------------------------------------------ */
 
 ::selection {
-  background-color: var(--color-primary-500);
-  color: var(--color-neutral-950);
+  background-color: var(--accent);
+  color: #ffffff;
 }
 
 :focus-visible {
-  outline: 2px solid var(--brand-primary);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
-  border-radius: var(--radius-sm);
 }
 
 /* ------------------------------------------------------------------ */
-/* Prose / Blog Content Defaults                                      */
+/* Prose / Blog Content                                               */
 /* ------------------------------------------------------------------ */
 
 .prose {
-  max-width: var(--container-prose);
+  max-width: var(--container-content);
 }
 
 .prose a {
-  color: var(--brand-primary);
+  color: var(--accent);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
-  transition: color var(--duration-fast);
+  transition: opacity var(--duration-fast);
 }
 
 .prose a:hover {
-  color: var(--color-primary-400);
+  opacity: 0.8;
 }
 
 .prose code {
   font-family: var(--font-mono);
-  font-size: 0.875em;
-  background-color: var(--bg-code);
-  padding: 0.125rem 0.375rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-primary);
+  font-size: 13px;
+  background-color: var(--mark-bg);
+  padding: 2px 6px;
 }
 
 .prose pre {
   font-family: var(--font-mono);
-  background-color: var(--bg-code);
-  border: 1px solid var(--border-primary);
-  border-radius: var(--radius-lg);
-  padding: 1rem 1.25rem;
+  background-color: var(--bg-secondary);
+  padding: 16px 20px;
   overflow-x: auto;
-  font-size: 0.875rem;
+  font-size: 13px;
   line-height: 1.7;
+  margin: 24px 0;
 }
 
 .prose pre code {
   background: none;
-  border: none;
   padding: 0;
   font-size: inherit;
 }
 
+.prose blockquote {
+  font-style: normal;
+  color: var(--fg-muted);
+  padding-left: 0;
+  border-left: none;
+  margin: 24px 0;
+}
+
+.prose blockquote p::before {
+  content: "\00BB\0020";
+  color: var(--fg-muted);
+}
+
+.prose h2 {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg-muted);
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+.prose h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fg);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.prose p {
+  font-size: 14px;
+  line-height: 1.714;
+  color: var(--fg);
+  margin-bottom: 20px;
+}
+
+.prose ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  color: var(--fg);
+}
+
+.prose ol {
+  list-style: decimal;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  color: var(--fg);
+}
+
+.prose li {
+  font-size: 14px;
+  line-height: 1.714;
+  margin-bottom: 4px;
+}
+
+.prose hr {
+  border-color: var(--border);
+  margin: 40px 0;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  margin: 24px 0;
+}
+
 /* ------------------------------------------------------------------ */
-/* Scrollbar Styling (Webkit + Firefox)                               */
+/* Scrollbar Styling                                                  */
 /* ------------------------------------------------------------------ */
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -337,25 +257,16 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-neutral-400);
-  border-radius: var(--radius-full);
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background: var(--color-neutral-700);
+  background: var(--border);
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-neutral-400) transparent;
-}
-
-.dark * {
-  scrollbar-color: var(--color-neutral-700) transparent;
+  scrollbar-color: var(--border) transparent;
 }
 
 /* ------------------------------------------------------------------ */
-/* Keyframe Animations                                                 */
+/* Keyframe Animations                                                */
 /* ------------------------------------------------------------------ */
 
 @keyframes fadeInUp {

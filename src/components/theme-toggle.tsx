@@ -18,32 +18,22 @@ export function ThemeToggle() {
     localStorage.setItem("theme", next ? "dark" : "light");
   }, [dark]);
 
-  // Render a placeholder with the same dimensions before mount to avoid layout shift
   if (!mounted) {
-    return (
-      <div
-        className="h-9 w-9 rounded-lg"
-        aria-hidden="true"
-      />
-    );
+    return <div className="h-5 w-5" aria-hidden="true" />;
   }
 
   return (
     <button
       type="button"
       onClick={toggle}
-      className="relative flex h-9 w-9 items-center justify-center rounded-lg
-        text-[var(--text-secondary)] transition-colors duration-200
-        hover:bg-[var(--bg-secondary)] hover:text-[var(--text-primary)]
-        focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-primary)]"
+      className="text-[var(--fg-muted)] transition-colors duration-200 hover:text-[var(--fg)]"
       aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
     >
       {dark ? (
-        /* Sun icon — shown in dark mode to indicate "click for light" */
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
+          width="16"
+          height="16"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -63,11 +53,10 @@ export function ThemeToggle() {
           <path d="m19.07 4.93-1.41 1.41" />
         </svg>
       ) : (
-        /* Moon icon — shown in light mode to indicate "click for dark" */
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
+          width="16"
+          height="16"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"

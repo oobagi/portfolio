@@ -1,9 +1,9 @@
 import Link from "next/link";
 import type { BlogPostMeta } from "@/lib/blog";
-import { Card } from "@/components/ui/card";
 
 interface BlogPostCardProps {
   post: BlogPostMeta;
+  isLast?: boolean;
 }
 
 function formatDate(dateStr: string): string {
@@ -14,31 +14,28 @@ function formatDate(dateStr: string): string {
   });
 }
 
-export function BlogPostCard({ post }: BlogPostCardProps) {
+export function BlogPostCard({ post, isLast = false }: BlogPostCardProps) {
   return (
-    <Link href={`/blog/${post.slug}`} className="block group">
-      <Card className="transition-all duration-[var(--duration-normal)] ease-[var(--ease-out)]">
-        <div className="flex items-center gap-3 mb-2">
-          <time
-            dateTime={post.date}
-            className="font-mono text-sm text-[var(--text-muted)]"
-          >
-            {formatDate(post.date)}
-          </time>
-          <span className="text-[var(--text-muted)]" aria-hidden="true">
-            &middot;
-          </span>
-          <span className="font-mono text-sm text-[var(--text-muted)]">
-            {post.readingTime}
-          </span>
-        </div>
-        <h3 className="text-xl font-semibold text-[var(--text-primary)] transition-colors duration-[var(--duration-normal)] group-hover:text-[var(--brand-primary)]">
+    <Link
+      href={`/blog/${post.slug}`}
+      className={`block py-4 group ${isLast ? "" : "border-b border-[var(--border)]"}`}
+    >
+      <div className="flex items-baseline justify-between gap-4">
+        <h3 className="text-sm font-medium text-[var(--fg)] transition-colors duration-200 group-hover:text-[var(--accent)]">
           {post.title}
         </h3>
-        <p className="mt-2 text-[var(--text-secondary)] leading-relaxed">
+        <time
+          dateTime={post.date}
+          className="shrink-0 text-xs text-[var(--fg-muted)]"
+        >
+          {formatDate(post.date)}
+        </time>
+      </div>
+      {post.description && (
+        <p className="mt-1 text-sm text-[var(--fg-muted)]">
           {post.description}
         </p>
-      </Card>
+      )}
     </Link>
   );
 }
