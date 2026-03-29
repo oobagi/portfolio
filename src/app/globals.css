@@ -278,10 +278,7 @@ ol {
 }
 
 .list-item:not(:last-child):not(.list-item--last) {
-  background-image: linear-gradient(var(--border), var(--border));
-  background-size: calc(100% - 22px) 1px;
-  background-position: bottom right;
-  background-repeat: no-repeat;
+  border-bottom: 1px solid var(--border);
 }
 
 .list-item:hover .list-item-title {
@@ -326,8 +323,6 @@ ol {
   margin-top: 4px;
   font-size: 14px;
   color: var(--fg-muted);
-  /* Indent to align with text after icon: 14px icon + 8px gap = 22px */
-  padding-left: 22px;
 }
 
 /* ------------------------------------------------------------------ */
@@ -356,7 +351,6 @@ ol {
 
 .section-link {
   margin-top: 24px;
-  margin-left: 22px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
