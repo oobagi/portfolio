@@ -24,6 +24,12 @@ const LANGUAGE_COLORS: Record<string, string> = {
   Elixir: "#6e4a7e",
 };
 
+const PROJECT_IMAGES: Record<string, string> = {
+  anyzork: "/projects/anyzork.png",
+  jflow: "/projects/jflow.png",
+  yap: "/projects/yap.png",
+};
+
 export interface Project {
   name: string;
   description: string | null;
@@ -33,6 +39,7 @@ export interface Project {
   languageColor: string | null;
   stars: number;
   topics: string[];
+  image: string | null;
 }
 
 interface GitHubRepo {
@@ -78,5 +85,7 @@ export async function getProjects(): Promise<Project[]> {
       languageColor: repo.language ? (LANGUAGE_COLORS[repo.language] ?? null) : null,
       stars: repo.stargazers_count,
       topics: repo.topics ?? [],
-    }));
+      image: PROJECT_IMAGES[repo.name] ?? null,
+    }))
+;
 }

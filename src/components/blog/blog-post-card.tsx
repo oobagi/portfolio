@@ -1,10 +1,10 @@
-import Link from "next/link";
-import { FileText } from "lucide-react";
 import type { BlogPostMeta } from "@/lib/blog";
+import { ListItem } from "@/components/ui/list-item";
+import { HStack, VStack } from "@/components/ui/stack";
+import { Text } from "@/components/ui/text";
 
 interface BlogPostCardProps {
   post: BlogPostMeta;
-  isLast?: boolean;
 }
 
 function formatDate(dateStr: string): string {
@@ -15,30 +15,23 @@ function formatDate(dateStr: string): string {
   });
 }
 
-export function BlogPostCard({ post, isLast = false }: BlogPostCardProps) {
+export function BlogPostCard({ post }: BlogPostCardProps) {
   return (
-    <Link
-      href={`/blog/${post.slug}`}
-      className={`list-item${isLast ? " list-item--last" : ""}`}
-    >
-      <div className="list-item-row">
-        <span className="list-item-icon-title">
-          <FileText size={14} className="list-item-icon" />
-          <h3 className="list-item-title">{post.title}</h3>
-        </span>
-        <time
-          dateTime={post.date}
-          className="text-xs text-muted"
-          style={{ flexShrink: 0 }}
-        >
-          {formatDate(post.date)}
-        </time>
-      </div>
-      {post.description && (
-        <p className="list-item-description">
-          {post.description}
-        </p>
-      )}
-    </Link>
+    <ListItem href={`/blog/${post.slug}`}>
+      <VStack gap={4}>
+        <HStack gap={8}>
+          <Text as="h3" className="list-item-title">{post.title}</Text>
+          <Text muted>{formatDate(post.date)}</Text>
+        </HStack>
+
+        {post.description && (
+          <Text muted as="p">{post.description}</Text>
+        )}
+
+        {post.tags && post.tags.length > 0 && (
+          <Text muted as="p">{post.tags.join(" / ")}</Text>
+        )}
+      </VStack>
+    </ListItem>
   );
 }

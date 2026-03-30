@@ -1,53 +1,42 @@
 import { GitMerge, GitPullRequest, GitPullRequestClosed } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { Section } from "@/components/ui/section";
+import { ListItem } from "@/components/ui/list-item";
+import { HStack, VStack } from "@/components/ui/stack";
+import { Text } from "@/components/ui/text";
 import { contributions } from "@/lib/contributions";
 
-function PrIcon({ state }: { state: "merged" | "open" | "closed" }) {
-  if (state === "merged") {
-    return <GitMerge size={14} className="pr-icon pr-icon-merged" />;
-  }
-  if (state === "open") {
-    return <GitPullRequest size={14} className="pr-icon pr-icon-open" />;
-  }
-  return <GitPullRequestClosed size={14} className="pr-icon pr-icon-closed" />;
-}
+const PR_ICONS: Record<string, { icon: LucideIcon; color: string }> = {
+  merged: { icon: GitMerge, color: "#a855f7" },
+  open: { icon: GitPullRequest, color: "#22c55e" },
+  closed: { icon: GitPullRequestClosed, color: "#ef4444" },
+};
 
 export function ContributionsSection() {
   if (contributions.length === 0) return null;
 
   return (
-    <Section id="contributions" title="OSS Contributions">
-      <div className="list-column">
-        {contributions.map((contribution, index) => (
-          <a
-            key={contribution.url}
-            href={contribution.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`list-item${index >= contributions.length - 1 ? " list-item--last" : ""}`}
-          >
-            <div className="list-item-row">
-              <span className="list-item-icon-title">
-                <PrIcon state={contribution.state} />
-                <span className="list-item-title">{contribution.repo}</span>
-              </span>
-            </div>
-            <p className="list-item-description">
-              {contribution.description}
-            </p>
-          </a>
-        ))}
-      </div>
-
-      <a
-        href="https://github.com/oobagi"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="section-link"
-      >
-        Follow on GitHub
-        <span aria-hidden="true">&rarr;</span>
-      </a>
+    <Section
+      id="contributions"
+      title="OSS Contributions"
+      titleHref="https://github.com/oobagi"
+    >
+      <VStack gap={0}>
+        {contributions.map((contribution) => {
+          const { icon: PrIcon, color } = PR_ICONS[contribution.state];
+          return (
+            <ListItem key={contribution.url} href={contribution.url} external>
+              <VStack gap={4}>
+                <HStack gap={8}>
+                  <PrIcon size={14} style={{ flexShrink: 0, color }} />
+                  <Text className="list-item-title">{contribution.repo}</Text>
+                </HStack>
+                <Text muted as="p">{contribution.description}</Text>
+              </VStack>
+            </ListItem>
+          );
+        })}
+      </VStack>
     </Section>
   );
 }

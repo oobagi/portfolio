@@ -1,35 +1,22 @@
-import { getProjects } from "@/lib/github";
-import { getAllPosts } from "@/lib/blog";
-import { HeroSection } from "@/components/hero-section";
-import { ProjectsSection } from "@/components/projects-section";
-import { ContributionsSection } from "@/components/contributions-section";
-import { ContactSection } from "@/components/contact-section";
-import { Section } from "@/components/ui/section";
-import { BlogPostList } from "@/components/blog/blog-post-list";
-import Link from "next/link";
-
-export default async function Home() {
-  const projects = await getProjects();
-  const latestPosts = getAllPosts().slice(0, 3);
-
+export default function Home() {
   return (
-    <>
-      <HeroSection />
-      <ProjectsSection projects={projects} />
-
-      {latestPosts.length > 0 && (
-        <Section id="notes" title="Latest Notes">
-          <BlogPostList posts={latestPosts} />
-
-          <Link href="/blog" className="section-link">
-            View all notes
-            <span aria-hidden="true">&rarr;</span>
-          </Link>
-        </Section>
-      )}
-
-      <ContributionsSection />
-      <ContactSection />
-    </>
+    <div className="tagline">
+      <p>
+        CS Senior at CSU Chico. Fullstack developer building developer tools,
+        AI integrations, and native apps across Python, Swift, TypeScript,
+        and Shell.
+      </p>
+      <p className="text-muted">
+        Currently building an agent framework for Claude Code, a macOS
+        voice-to-text app, and a text adventure engine powered by LLMs. I
+        gravitate toward problems that bug me personally and then build until
+        they don&apos;t anymore.
+      </p>
+      <p className="text-muted">
+        I do my best work when I can move fast, own the problem end to end,
+        and ship something real. I care about developer experience and believe
+        the best tools are the ones you don&apos;t have to think about.
+      </p>
+    </div>
   );
 }

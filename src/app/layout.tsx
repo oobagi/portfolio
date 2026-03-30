@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { ThemeScript } from "@/components/theme-provider";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import { TaglineNav } from "@/components/tagline-nav";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { LastUpdated } from "@/components/last-updated";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -54,10 +55,23 @@ export default function RootLayout({
         <ThemeScript />
       </head>
       <body>
-        <div className="site-wrapper">
-          <Header />
-          <main>{children}</main>
-          <Footer />
+        <div className="site">
+          <header className="site-header">
+            <TaglineNav />
+          </header>
+
+          <main className="site-body">
+            {children}
+          </main>
+
+          <footer className="site-footer">
+            <ThemeToggle />
+            <nav className="footer-links">
+              <a href="https://github.com/oobagi" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="mailto:jadenwatsond@gmail.com">Email</a>
+            </nav>
+            <LastUpdated />
+          </footer>
         </div>
       </body>
     </html>
