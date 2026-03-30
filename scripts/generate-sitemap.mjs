@@ -8,7 +8,7 @@ const ROOT = path.join(__dirname, "..");
 const BLOG_DIR = path.join(ROOT, "content/blog");
 const PUBLIC_DIR = path.join(ROOT, "public");
 const OUT_DIR = path.join(ROOT, "out");
-const SITE_URL = "https://jadenwatson.dev";
+const SITE_URL = "https://jawats.com";
 
 function getAllPosts() {
   if (!fs.existsSync(BLOG_DIR)) {
