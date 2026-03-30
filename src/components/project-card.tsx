@@ -1,42 +1,44 @@
-import { Folder } from "lucide-react";
+import Image from "next/image";
+import { Star } from "lucide-react";
 import type { Project } from "@/lib/github";
-import { Badge } from "@/components/ui/badge";
 
 interface ProjectCardProps {
   project: Project;
-  isLast?: boolean;
+  featured?: boolean;
 }
 
-export function ProjectCard({ project, isLast = false }: ProjectCardProps) {
+export function ProjectCard({ project, featured }: ProjectCardProps) {
   return (
     <a
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`list-item${isLast ? " list-item--last" : ""}`}
+      className="list-item project-featured"
     >
-      <div className="list-item-row">
-        <span className="list-item-icon-title">
-          <Folder size={14} className="list-item-icon" />
+      <div className="project-content">
+        <div className="project-header">
           <span className="list-item-title">{project.name}</span>
-        </span>
-
-        <div className="list-item-meta">
-          {project.language && (
-            <Badge>{project.language}</Badge>
-          )}
           {project.stars > 0 && (
-            <span className="text-xs text-muted">
-              {project.stars} stars
+            <span className="star-count">
+              <Star size={14} strokeWidth={2.5} />
+              {project.stars}
             </span>
           )}
         </div>
+        {project.description && (
+          <p className="text-muted project-desc">{project.description}</p>
+        )}
       </div>
-
-      {project.description && (
-        <p className="list-item-description">
-          {project.description}
-        </p>
+      {project.image && (
+        <div className="project-image-card">
+          <Image
+            src={project.image}
+            alt=""
+            width={64}
+            height={64}
+            className="project-image"
+          />
+        </div>
       )}
     </a>
   );

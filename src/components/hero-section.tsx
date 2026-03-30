@@ -1,23 +1,29 @@
-import Link from "next/link";
+import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <section id="hero" className="hero">
-      <h2 className="hero-title">
-        Senior CS student at CSU Chico who builds things on the side.
-      </h2>
-
-      <p className="hero-bio">
-        Fullstack and app developer. I&apos;ve shipped a macOS
-        voice&#8209;to&#8209;text app, an agent framework for Claude Code,
-        and a text adventure engine powered by LLMs. Looking for internships
-        in web dev, app dev, or anything where I get to build and ship.
-      </p>
-
-      <Link href="/blog" className="hero-link">
-        View notes
-        <span aria-hidden="true">&rarr;</span>
-      </Link>
+    <section id="hero" className="section">
+      <div className="section-left">
+        <Image
+          src="/jaden.jpg"
+          alt="Jaden Watson"
+          width={400}
+          height={533}
+          className="hero-image"
+          priority
+        />
+      </div>
+      <div className="section-content">
+        <p className="text-muted">
+          <span className="text-fg">Jaden Watson</span>
+          <br />Senior CS Student @ CSU Chico
+          <br />Chico, CA
+          <br />
+          <br /><span className="text-fg">Fullstack and app developer</span> building macOS apps, AI tools, and web experiences. I work across Python, Swift, TypeScript, and Shell — wherever the problem takes me.
+          <br />{"\t"}I care about tools that feel good to use — fast, minimal, and honest. I&apos;d rather write something small that works well than something large that almost works.
+          <br />{"\t"}Open to internships where I get to build real things with people who care about craft.
+        </p>
+      </div>
     </section>
   );
 }
