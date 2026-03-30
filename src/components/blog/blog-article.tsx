@@ -1,5 +1,6 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypePrettyCode from "rehype-pretty-code";
+import remarkGfm from "remark-gfm";
 import type { BlogPost } from "@/lib/blog";
 import { mdxComponents } from "@/components/blog/mdx-components";
 
@@ -29,6 +30,7 @@ export function BlogArticle({ post }: BlogArticleProps) {
           components={mdxComponents}
           options={{
             mdxOptions: {
+              remarkPlugins: [remarkGfm],
               rehypePlugins: [
                 [
                   rehypePrettyCode,
