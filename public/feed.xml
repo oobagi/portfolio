@@ -4,15 +4,8 @@
         <description><![CDATA[Thoughts on development, AI, and the tools I'm building.]]></description>
         <link>https://jawats.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 30 Mar 2026 12:08:09 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 30 Mar 2026 23:19:15 GMT</lastBuildDate>
         <atom:link href="https://jawats.com/feed.xml" rel="self" type="application/rss+xml"/>
         <language><![CDATA[en]]></language>
-        <item>
-            <title><![CDATA[Hello World]]></title>
-            <description><![CDATA[Welcome to my blog. Here's what I'm building and why.]]></description>
-            <link>https://jawats.com/blog/hello-world</link>
-            <guid isPermaLink="true">https://jawats.com/blog/hello-world</guid>
-            <pubDate>Sun, 29 Mar 2026 00:00:00 GMT</pubDate>
-        </item>
     </channel>
 </rss>

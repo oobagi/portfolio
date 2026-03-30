@@ -2,9 +2,12 @@ export default function Home() {
   return (
     <div className="tagline">
       <p>
-        CS Senior at CSU Chico. Fullstack developer building developer tools,
-        AI integrations, and native apps across Python, Swift, TypeScript,
-        and Shell.
+        CS Senior at CSU Chico.{" "}
+        <span className="text-muted">
+          Fullstack developer building developer tools,
+          AI integrations, and native apps across Python, Swift, TypeScript,
+          and Shell.
+        </span>
       </p>
       <p className="text-muted">
         Currently building an agent framework for Claude Code, a macOS

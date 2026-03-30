@@ -166,7 +166,7 @@ ol {
 .section-label-link:hover {
   text-decoration: underline;
   text-underline-offset: 2px;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
 }
 
 @media (max-width: 640px) {
@@ -192,13 +192,13 @@ ol {
 .section-action:hover {
   text-decoration: underline;
   text-underline-offset: 2px;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
 }
 
 .text-link:hover {
   text-decoration: underline;
   text-underline-offset: 2px;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
 }
 
 /* ------------------------------------------------------------------ */
@@ -238,7 +238,7 @@ ol {
 .tagline-link {
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
   text-decoration-color: var(--fg-muted);
   transition: text-decoration-color 0.2s;
 }
@@ -400,7 +400,7 @@ ol {
 .list-item:hover .list-item-title {
   text-decoration: underline;
   text-underline-offset: 2px;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
 }
 
 .list-item-row {
@@ -481,7 +481,7 @@ ol {
 .section-link:hover {
   text-decoration: underline;
   text-underline-offset: 2px;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
 }
 
 /* ------------------------------------------------------------------ */
@@ -575,7 +575,7 @@ ol {
 .footer-link:hover {
   text-decoration: underline;
   text-underline-offset: 2px;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
 }
 
 .footer-copy {
@@ -597,7 +597,7 @@ ol {
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 2px;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
 }
 
 .contact-email:hover {
@@ -675,98 +675,6 @@ ol {
 }
 
 /* ------------------------------------------------------------------ */
-/* MDX Components                                                     */
-/* ------------------------------------------------------------------ */
-
-.mdx-h1 {
-  margin-top: 48px;
-  margin-bottom: 16px;
-}
-
-.mdx-h2 {
-  color: var(--fg-muted);
-  margin-top: 48px;
-  margin-bottom: 16px;
-}
-
-.mdx-h3 {
-  margin-top: 32px;
-  margin-bottom: 12px;
-}
-
-.mdx-p {
-  margin-bottom: 20px;
-}
-
-.mdx-ul {
-  list-style: disc;
-  padding-left: 20px;
-  margin-bottom: 20px;
-}
-
-.mdx-ul > li + li {
-  margin-top: 4px;
-}
-
-.mdx-ol {
-  list-style: decimal;
-  padding-left: 20px;
-  margin-bottom: 20px;
-}
-
-.mdx-ol > li + li {
-  margin-top: 4px;
-}
-
-.mdx-a {
-  color: var(--accent);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  text-decoration-thickness: 1px;
-}
-
-.mdx-a:hover {
-  opacity: 0.8;
-}
-
-.mdx-blockquote {
-  margin: 24px 0;
-  color: var(--fg-muted);
-}
-
-.mdx-blockquote p::before {
-  content: "\00BB\0020";
-  color: var(--fg-muted);
-}
-
-.mdx-hr {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 40px 0;
-}
-
-.mdx-strong {
-  font-weight: 400;
-}
-
-.mdx-code {
-  background-color: var(--mark-bg);
-  padding: 2px 6px;
-}
-
-.mdx-pre {
-  background-color: var(--bg-secondary);
-  padding: 16px 20px;
-  overflow-x: auto;
-  margin: 24px 0;
-}
-
-.mdx-pre code {
-  background: transparent;
-  padding: 0;
-}
-
-/* ------------------------------------------------------------------ */
 /* Prose / Blog Content                                               */
 /* ------------------------------------------------------------------ */
 
@@ -774,52 +682,11 @@ ol {
   max-width: var(--container-content);
 }
 
-.prose a {
-  color: var(--accent);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
-
-.prose a:hover {
-  opacity: 0.8;
-}
-
-.prose code {
-  font-family: var(--font-sans);
-  background-color: var(--mark-bg);
-  padding: 2px 6px;
-}
-
-.prose pre {
-  font-family: var(--font-sans);
-  background-color: var(--bg-secondary);
-  padding: 16px 20px;
-  overflow-x: auto;
-  margin: 24px 0;
-}
-
-.prose pre code {
-  background: none;
-  padding: 0;
-}
-
-.prose blockquote {
-  font-style: normal;
-  color: var(--fg-muted);
-  border-left: none;
-  margin: 24px 0;
-}
-
-.prose blockquote p::before {
-  content: "\00BB\0020";
-  color: var(--fg-muted);
-}
-
 .prose h2 {
-  color: var(--fg-muted);
   margin-top: 48px;
   margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
 }
 
 .prose h3 {
@@ -827,34 +694,124 @@ ol {
   margin-bottom: 12px;
 }
 
+.prose h4 {
+  margin-top: 24px;
+  margin-bottom: 8px;
+  color: var(--fg-muted);
+}
+
 .prose p {
   margin-bottom: 20px;
+  line-height: 1.75;
+}
+
+.prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.prose a:hover {
+  opacity: 0.8;
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+.prose code {
+  font-family: var(--font-sans);
+  background-color: var(--mark-bg);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.prose pre {
+  font-family: var(--font-sans);
+  background-color: var(--bg-secondary);
+  padding: 20px 24px;
+  overflow-x: auto;
+  margin: 28px 0;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+.prose blockquote {
+  font-style: normal;
+  color: var(--fg-muted);
+  border-left: 3px solid var(--border);
+  padding-left: 20px;
+  margin: 28px 0;
+}
+
+.prose blockquote p::before {
+  content: none;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 48px 0;
 }
 
 .prose ul {
   list-style: disc;
-  padding-left: 20px;
+  padding-left: 24px;
   margin-bottom: 20px;
 }
 
 .prose ol {
   list-style: decimal;
-  padding-left: 20px;
+  padding-left: 24px;
   margin-bottom: 20px;
 }
 
 .prose li {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  line-height: 1.7;
 }
 
-.prose strong {
-  font-weight: 400;
+.prose li ul,
+.prose li ol {
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 28px 0;
+}
+
+.prose th,
+.prose td {
+  text-align: left;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.prose th {
+  font-weight: 500;
+  color: var(--fg-muted);
+  border-bottom: 2px solid var(--border);
 }
 
 .prose img {
   max-width: 100%;
   height: auto;
-  margin: 24px 0;
+  margin: 28px 0;
+  border-radius: 12px;
 }
 
 /* ------------------------------------------------------------------ */
