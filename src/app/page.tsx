@@ -1,25 +1,26 @@
 export default function Home() {
   return (
-    <div className="tagline">
-      <p>
-        CS Senior at CSU Chico.{" "}
-        <span className="text-muted">
-          Fullstack developer building developer tools,
-          AI integrations, and native apps across Python, Swift, TypeScript,
-          and Shell.
-        </span>
-      </p>
-      <p className="text-muted">
-        Currently building an agent framework for Claude Code, a macOS
-        voice-to-text app, and a text adventure engine powered by LLMs. I
-        gravitate toward problems that bug me personally and then build until
-        they don&apos;t anymore.
-      </p>
-      <p className="text-muted">
-        I do my best work when I can move fast, own the problem end to end,
-        and ship something real. I care about developer experience and believe
-        the best tools are the ones you don&apos;t have to think about.
-      </p>
-    </div>
+    <p className="tagline">
+      CS Senior at CSU Chico.{" "}
+      <span className="text-muted">
+        Fullstack developer working across web, mobile, and developer
+        tooling. Mostly TypeScript, Python, and React Native.
+      </span>
+      <br />
+      <span className="text-muted">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I build things that scratch my own itch. CLI tools,
+        multiplatform apps, AI integrations. Most of my projects start
+        because something in my workflow is broken and I&apos;d rather
+        fix it than work around it. I care about developer experience
+        and writing code that other people can pick up without wanting
+        to rewrite it.
+      </span>
+      <br />
+      <span className="text-muted">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graduating Fall 2026 and actively looking for software
+        engineering internships. If you&apos;re building something
+        interesting, <a href="mailto:jadenwatsond@gmail.com" className="tagline-link">let&apos;s talk</a>.
+      </span>
+    </p>
   );
 }

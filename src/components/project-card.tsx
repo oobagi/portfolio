@@ -13,7 +13,7 @@ export function ProjectCard({ project, featured }: ProjectCardProps) {
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="list-item project-featured"
+      className={`list-item${project.image ? " project-featured" : ""}`}
     >
       <div className="project-content">
         <div className="project-header">
