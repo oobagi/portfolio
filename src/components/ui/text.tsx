@@ -1,3 +1,5 @@
+import { cn } from "@/lib/cn";
+
 interface TextProps {
   children: React.ReactNode;
   muted?: boolean;
@@ -12,7 +14,7 @@ export function Text({
   className,
 }: TextProps) {
   return (
-    <Tag className={`${muted ? "text-muted" : ""} ${className ?? ""}`.trim() || undefined}>
+    <Tag className={cn(muted && "text-muted", className)}>
       {children}
     </Tag>
   );

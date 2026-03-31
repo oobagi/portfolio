@@ -1,3 +1,5 @@
+import { cn } from "@/lib/cn";
+
 interface StackProps {
   children: React.ReactNode;
   gap?: number;
@@ -6,7 +8,7 @@ interface StackProps {
 
 export function HStack({ children, gap = 8, className }: StackProps) {
   return (
-    <div className={className} style={{ display: "flex", alignItems: "center", gap: `${gap}px` }}>
+    <div className={cn("hstack", className)} style={{ gap: `${gap}px` }}>
       {children}
     </div>
   );
@@ -14,16 +16,9 @@ export function HStack({ children, gap = 8, className }: StackProps) {
 
 export function VStack({ children, gap = 4, className }: StackProps) {
   return (
-    <div className={className} style={{ display: "flex", flexDirection: "column", gap: `${gap}px` }}>
+    <div className={cn("vstack", className)} style={{ gap: `${gap}px` }}>
       {children}
     </div>
   );
 }
 
-export function ZStack({ children, className }: Omit<StackProps, "gap">) {
-  return (
-    <div className={className} style={{ display: "grid", gridTemplate: "1fr / 1fr" }}>
-      {children}
-    </div>
-  );
-}

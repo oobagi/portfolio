@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
 import { getProjects } from "@/lib/github";
+import { contributions, PR_ICONS } from "@/lib/contributions";
 import { ProjectCard } from "@/components/project-card";
-import { contributions } from "@/lib/contributions";
-import { GitMerge, GitPullRequest, GitPullRequestClosed } from "lucide-react";
+import { ListItem } from "@/components/ui/list-item";
+import { HStack } from "@/components/ui/stack";
 
 export const metadata: Metadata = {
   title: "Projects",
   description: "Things I've built.",
 };
-
-const PR_ICONS = {
-  merged: { icon: GitMerge, color: "#a855f7" },
-  open: { icon: GitPullRequest, color: "#22c55e" },
-  closed: { icon: GitPullRequestClosed, color: "#ef4444" },
-} as const;
 
 export default async function ProjectsPage() {
   const projects = await getProjects();
@@ -30,18 +25,12 @@ export default async function ProjectsPage() {
           <h2 className="projects-section-label">Other</h2>
           <div className="projects-section-content divider-list">
             {rest.map((project) => (
-              <a
-                key={project.name}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="list-item"
-              >
+              <ListItem key={project.name} href={project.url} external>
                 <span className="list-item-title">{project.name}</span>
                 {project.description && (
                   <p className="text-muted project-desc">{project.description}</p>
                 )}
-              </a>
+              </ListItem>
             ))}
           </div>
         </>
@@ -55,21 +44,15 @@ export default async function ProjectsPage() {
           </h2>
           <div className="projects-section-content divider-list">
             {contributions.map((c) => {
-              const { icon: PrIcon, color } = PR_ICONS[c.state];
+              const { icon: PrIcon, className } = PR_ICONS[c.state];
               return (
-                <a
-                  key={c.url}
-                  href={c.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="list-item"
-                >
-                  <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <PrIcon size={14} style={{ flexShrink: 0, color }} />
+                <ListItem key={c.url} href={c.url} external>
+                  <HStack gap={8}>
+                    <PrIcon size={14} className={className} />
                     <span className="list-item-title">{c.repo}</span>
-                  </div>
+                  </HStack>
                   <p className="text-muted project-desc">{c.description}</p>
-                </a>
+                </ListItem>
               );
             })}
           </div>

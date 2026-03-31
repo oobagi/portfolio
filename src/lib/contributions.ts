@@ -1,3 +1,6 @@
+import { GitMerge, GitPullRequest, GitPullRequestClosed } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
 export interface Contribution {
   repo: string;
   url: string;
@@ -5,8 +8,11 @@ export interface Contribution {
   state: "merged" | "open" | "closed";
 }
 
-// Add your OSS contributions here. State determines the icon color:
-// merged = purple, open = green, closed = red
+export const PR_ICONS: Record<string, { icon: LucideIcon; className: string }> = {
+  merged: { icon: GitMerge, className: "pr-icon pr-icon-merged" },
+  open: { icon: GitPullRequest, className: "pr-icon pr-icon-open" },
+  closed: { icon: GitPullRequestClosed, className: "pr-icon pr-icon-closed" },
+};
 export const contributions: Contribution[] = [
   {
     repo: "mdn/content",
