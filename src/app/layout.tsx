@@ -7,7 +7,7 @@ import { LastUpdated } from "@/components/last-updated";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jawats.com"),
+  metadataBase: new URL("https://jadenwatson.me"),
   title: {
     default: "Jaden Watson",
     template: "%s | Jaden Watson",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jaden Watson",
     description: "Personal portfolio and blog showcasing my best projects.",
-    url: "https://jawats.com",
+    url: "https://jadenwatson.me",
     siteName: "Jaden Watson",
     type: "website",
     locale: "en_US",

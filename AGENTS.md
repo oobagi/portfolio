@@ -1,6 +1,6 @@
 # Portfolio
 
-Personal portfolio website and blog built with Next.js 15 (App Router), native CSS, TypeScript, and MDX. Deployed on Vercel at jawats.com.
+Personal portfolio website and blog built with Next.js 15 (App Router), native CSS, TypeScript, and MDX. Deployed on Vercel at jadenwatson.me.
 
 ## Stack
 
@@ -125,7 +125,7 @@ docs/
 
 ### SEO
 
-- Root layout defines `metadataBase` (jawats.com), OpenGraph tags, Twitter card, and robots directives.
+- Root layout defines `metadataBase` (jadenwatson.me), OpenGraph tags, Twitter card, and robots directives.
 - Each blog post generates its own OG metadata via `generateMetadata`.
 - `robots.txt`, `sitemap.xml`, and `feed.xml` are served from the public directory.
 - RSS feed is linked via `alternates.types` in the root layout metadata.

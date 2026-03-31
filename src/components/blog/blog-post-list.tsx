@@ -1,6 +1,5 @@
 import type { BlogPostMeta } from "@/lib/blog";
 import { BlogPostCard } from "@/components/blog/blog-post-card";
-import { VStack } from "@/components/ui/stack";
 import { Text } from "@/components/ui/text";
 
 interface BlogPostListProps {
@@ -13,10 +12,10 @@ export function BlogPostList({ posts }: BlogPostListProps) {
   }
 
   return (
-    <VStack gap={0}>
+    <div className="divider-list">
       {posts.map((post) => (
         <BlogPostCard key={post.slug} post={post} />
       ))}
-    </VStack>
+    </div>
   );
 }

@@ -21,7 +21,7 @@ export function ContributionsSection() {
       title="OSS Contributions"
       titleHref="https://github.com/oobagi"
     >
-      <VStack gap={0}>
+      <div className="divider-list">
         {contributions.map((contribution) => {
           const { icon: PrIcon, color } = PR_ICONS[contribution.state];
           return (
@@ -36,7 +36,7 @@ export function ContributionsSection() {
             </ListItem>
           );
         })}
-      </VStack>
+      </div>
     </Section>
   );
 }

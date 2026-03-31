@@ -4,16 +4,15 @@ import type { Project } from "@/lib/github";
 
 interface ProjectCardProps {
   project: Project;
-  featured?: boolean;
 }
 
-export function ProjectCard({ project, featured }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <a
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`list-item${project.image ? " project-featured" : ""}`}
+      className="list-item project-card"
     >
       {project.image && (
         <div className="project-image-card">

@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jawats.com/</loc>
+    <loc>https://jadenwatson.me/</loc>
     <lastmod>2026-03-31</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jawats.com/blog</loc>
+    <loc>https://jadenwatson.me/blog</loc>
     <lastmod>2026-03-31</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jadenwatson.me/blog/hello-world</loc>
+    <lastmod>2026-03-30</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>
