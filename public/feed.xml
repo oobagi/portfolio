@@ -2,10 +2,17 @@
     <channel>
         <title><![CDATA[Jaden Watson's Blog]]></title>
         <description><![CDATA[Thoughts on development, AI, and the tools I'm building.]]></description>
-        <link>https://jawats.com</link>
+        <link>https://jadenwatson.me</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 31 Mar 2026 02:56:08 GMT</lastBuildDate>
-        <atom:link href="https://jawats.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Tue, 31 Mar 2026 04:10:34 GMT</lastBuildDate>
+        <atom:link href="https://jadenwatson.me/feed.xml" rel="self" type="application/rss+xml"/>
         <language><![CDATA[en]]></language>
+        <item>
+            <title><![CDATA[Hello (Blogging) World]]></title>
+            <description><![CDATA[My first attempt at translating my thoughts]]></description>
+            <link>https://jadenwatson.me/blog/hello-world</link>
+            <guid isPermaLink="true">https://jadenwatson.me/blog/hello-world</guid>
+            <pubDate>Mon, 30 Mar 2026 00:00:00 GMT</pubDate>
+        </item>
     </channel>
 </rss>

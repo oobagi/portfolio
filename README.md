@@ -2,7 +2,7 @@
 
 My open-source personal portfolio. Built with Next.js, TypeScript, and native CSS. Deployed on Vercel.
 
-**[jawats.com](https://jawats.com)**
+**[jadenwatson.me](https://jadenwatson.me)**
 
 ## Stack
 
