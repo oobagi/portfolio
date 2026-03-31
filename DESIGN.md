@@ -1,28 +1,26 @@
 # Design System
 
-> Monospace minimalism with oversized display text. Terminal/IDE aesthetic with bold typographic moments. Achromatic palette + blue accent. The site feels like a beautifully typeset plaintext document with dramatic headings.
+> Clean minimalism with Geist Sans. Achromatic palette + blue accent. Narrow column, generous whitespace. The site reads like well-typeset prose.
 
 ## Font
 
-**JetBrains Mono** is the only font. Everything is monospace. Loaded via `next/font/google` as `--font-jetbrains`, mapped to `--font-mono` in the theme.
+**Geist Sans** is the only font. Loaded via `geist/font/sans` as `--font-geist-sans`, mapped to `--font-sans` in the theme.
 
 ## Typography
 
-| Element | Size | Weight | Tracking | Color | Notes |
-|---------|------|--------|----------|-------|-------|
-| Hero name | 64px / 96px | 700 | -0.04em | `--fg` | THE signature. Oversized display. |
-| Blog post title | 36px / 48px | 700 | -0.04em | `--fg` | Same dramatic style, slightly smaller |
-| Section heading (h2) | 12px | 500 | 0.1em | `--fg-muted` | UPPERCASE, small label style |
-| Subheading (h3) | 14px | 500 | 0 | `--fg` | Same size as body, heavier weight |
-| Body text | 14px | 400 | 0 | `--fg` | Line-height 1.714 (24px) |
-| Small/meta | 12px | 400 | 0 | `--fg-muted` | Dates, reading time, captions |
-| Badge | 11px | 400 | 0.1em | `--fg-muted` | UPPERCASE, no background |
-
-The dramatic contrast between the oversized hero name and the small, muted section labels defines the visual identity.
+| Element | Size | Weight | Color | Notes |
+|---------|------|--------|-------|-------|
+| Tagline / bio | 22px | 400 | `--fg` | Flowing prose with inline icons and links |
+| Body text | 17px | 400 | `--fg` | Line-height 1.6 |
+| List item title | 17px | 500 | `--fg` | Project names, post titles |
+| Muted text | 17px | 400 | `--fg-muted` | Descriptions, secondary info |
+| Blog h2 | 17px | 400 | `--fg` | Border-bottom separator |
+| Blog h3 | 17px | 400 | `--fg` | No separator |
+| Inline code | 0.9em | 400 | `--fg` | `--mark-bg` background, 4px border-radius |
 
 ## Colors
 
-Fully achromatic with one accent color for links and CTAs.
+Fully achromatic with one accent color for links.
 
 ### Light
 
@@ -33,7 +31,7 @@ Fully achromatic with one accent color for links and CTAs.
 | `--fg` | `#0a0a0a` | Primary text |
 | `--fg-muted` | `#737373` | Secondary text, labels, meta |
 | `--border` | `#e5e5e5` | Separators, borders |
-| `--accent` | `#2563eb` | Links, CTAs, focus rings |
+| `--accent` | `#2563eb` | Links, focus rings |
 | `--mark-bg` | `#f5f5f5` | Inline code background |
 
 ### Dark
@@ -45,64 +43,59 @@ Fully achromatic with one accent color for links and CTAs.
 | `--fg` | `#fafafa` | Primary text |
 | `--fg-muted` | `#a3a3a3` | Secondary text, labels, meta |
 | `--border` | `#262626` | Separators, borders |
-| `--accent` | `#3b82f6` | Links, CTAs, focus rings |
+| `--accent` | `#3b82f6` | Links, focus rings |
 | `--mark-bg` | `#1a1a1a` | Inline code background |
 
 ## Layout
 
 | Property | Value |
 |----------|-------|
-| Max content width | 560px |
-| Body top padding | 80px (pt-20) |
-| Body bottom padding | 40px (pb-10) |
-| Horizontal padding | 20px (px-5) |
-| Section spacing | 80px (mt-20) between sections |
-| Header to content | 80px (mb-20) |
-
-The narrow column (560px) with generous whitespace creates a reading-optimized experience.
+| Max content width | 650px |
+| Site padding | 40px top, 24px sides |
+| Header to content | 80px |
+| Footer margin-top | 80px |
 
 ## Components
 
-### Header
-Simple flex row: name link (left) + "Notes" link + theme toggle (right). 14px, no sticky, no blur, no mobile menu.
+### Tagline Nav
+Flowing prose paragraph: avatar + name link + description + icon/link pairs for projects, thoughts, resume. Icons and labels are wrapped in `nowrap` spans to prevent splitting across lines.
 
 ### Footer
-Definition list (`<dl>`) with @handle-style social links. Year/copyright line below.
+Centered: theme toggle, GitHub + Email links, last commit hash link.
 
-### Hero Section
-Oversized name (64px mobile, 96px desktop) with tight tracking. Bio in muted 14px below. Blue pill CTA "View blog" + text social handle.
+### Home Page
+Single `<p>` in tagline style (22px). Bio text with indented paragraphs using `<br>` + `&nbsp;` indentation. "Let's talk" links to email.
 
-### Projects
-Small uppercase "Projects" label. List of items separated by 1px border lines. Each item: name (linked, 14px medium), language badge (11px uppercase), star count, description.
+### Projects Page
+Projects with images: 2-column grid (1.5fr text / 1fr image card). Image cards have grid-pattern background, 20px border-radius, 1px border. Projects without images: plain list items. Responsive breakpoint at 550px stacks to 1 column.
 
-### Blog Listing
-Small uppercase "Notes" label. List of posts separated by borders. Title (14px medium) + date (12px muted).
+### Blog
+Post list with empty state text. Post page: title, date + reading time, `.prose` wrapper for MDX content.
 
-### Blog Post
-Oversized title (36-48px). Date + reading time (12px muted). Body in prose style. Back link at top.
+### 404
+Centered ASCII starfield with "404" in the middle. "Nothing here." below.
 
-### UI Primitives
-- **Button**: Blue bg, white text, square (no border-radius), 14px
-- **Badge**: Text-only, 11px uppercase letter-spaced, muted color
-- **Section**: Margin-top wrapper (mt-20)
-- **SectionHeading**: 12px uppercase muted letter-spaced label
-- **Skeleton**: Pulsing with `--border` color
-- **AnimateIn**: Intersection Observer fade-in-up
+## Prose/Blog Styles
+
+- Links: underlined with `--accent` color, 2px thickness
+- Bold: font-weight 600
+- Code blocks: `--bg-secondary` background, 12px border-radius, 1px border, 15px font size
+- Inline code: `--mark-bg` background, 4px border-radius, 0.9em font size
+- Blockquotes: 3px left border, `--fg-muted` color, 20px padding-left
+- Tables: full width, `--border` bottom on cells, 2px border on thead
+- Horizontal rules: 1px `--border`, 48px margin
+- Headings (h2): border-bottom separator
+
+## Underlines
+
+All underlines sitewide are 2px thick, including hover states, tagline links, and prose links.
 
 ## Dark Mode
 
 `.dark` class on `<html>` + localStorage. Blocking `<script>` in `<head>` prevents FOUC. Semantic CSS variables remap under `.dark`.
 
-## Prose/Blog Styles
-
-- Links: underlined with `--accent` color
-- Code blocks: `--bg-secondary` background, no border, no border-radius
-- Inline code: `--mark-bg` background, minimal padding
-- Blockquotes: prefixed with right-pointing double angle (>>) character, no left border
-
 ## Accessibility
 
 - All text meets WCAG AA contrast ratios
-- `prefers-reduced-motion` disables all animations
 - `focus-visible` ring on all interactive elements (2px solid, accent color)
-- Semantic HTML throughout (nav, article, header, footer, dl)
+- Semantic HTML throughout (nav, article, header, footer)
