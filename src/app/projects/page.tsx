@@ -13,13 +13,21 @@ export default async function ProjectsPage() {
   const rest = projects.filter((p) => !p.image);
 
   return (
-    <div className="list-column">
-      {featured.map((project) => (
-        <ProjectCard key={project.name} project={project} featured />
-      ))}
-      {rest.map((project) => (
-        <ProjectCard key={project.name} project={project} />
-      ))}
-    </div>
+    <>
+      {featured.length > 0 && (
+        <div className="projects-grid">
+          {featured.map((project) => (
+            <ProjectCard key={project.name} project={project} featured />
+          ))}
+        </div>
+      )}
+      {rest.length > 0 && (
+        <div className="projects-rest">
+          {rest.map((project) => (
+            <ProjectCard key={project.name} project={project} />
+          ))}
+        </div>
+      )}
+    </>
   );
 }

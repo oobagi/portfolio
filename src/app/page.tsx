@@ -8,7 +8,7 @@ export default function Home() {
       </span>
       <br />
       <span className="text-muted">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I build things that scratch my own itch. CLI tools,
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I <a href="https://github.com/oobagi" target="_blank" rel="noopener noreferrer" className="tagline-link">build things</a> that scratch my own itch. CLI tools,
         multiplatform apps, AI integrations. Most of my projects start
         because something in my workflow is broken and I&apos;d rather
         fix it than work around it. I care about developer experience

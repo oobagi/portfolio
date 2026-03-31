@@ -15,6 +15,17 @@ export function ProjectCard({ project, featured }: ProjectCardProps) {
       rel="noopener noreferrer"
       className={`list-item${project.image ? " project-featured" : ""}`}
     >
+      {project.image && (
+        <div className="project-image-card">
+          <Image
+            src={project.image}
+            alt=""
+            width={64}
+            height={64}
+            className="project-image"
+          />
+        </div>
+      )}
       <div className="project-content">
         <div className="project-header">
           <span className="list-item-title">{project.name}</span>
@@ -29,17 +40,6 @@ export function ProjectCard({ project, featured }: ProjectCardProps) {
           <p className="text-muted project-desc">{project.description}</p>
         )}
       </div>
-      {project.image && (
-        <div className="project-image-card">
-          <Image
-            src={project.image}
-            alt=""
-            width={64}
-            height={64}
-            className="project-image"
-          />
-        </div>
-      )}
     </a>
   );
 }
