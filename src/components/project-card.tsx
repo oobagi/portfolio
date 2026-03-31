@@ -19,8 +19,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <Image
             src={project.image}
             alt=""
-            width={64}
-            height={64}
+            width={600}
+            height={400}
             className="project-image"
           />
         </div>

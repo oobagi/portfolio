@@ -27,6 +27,7 @@ const LANGUAGE_COLORS: Record<string, string> = {
 const PROJECT_IMAGES: Record<string, string> = {
   anyzork: "/projects/anyzork.png",
   jflow: "/projects/jflow.png",
+  portfolio: "/projects/portfolio.png",
   yap: "/projects/yap.png",
 };
 
