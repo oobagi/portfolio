@@ -1,18 +1,11 @@
 import type { BlogPostMeta } from "@/lib/blog";
+import { formatDate } from "@/lib/format";
 import { ListItem } from "@/components/ui/list-item";
 import { HStack, VStack } from "@/components/ui/stack";
 import { Text } from "@/components/ui/text";
 
 interface BlogPostCardProps {
   post: BlogPostMeta;
-}
-
-function formatDate(dateStr: string): string {
-  return new Date(dateStr).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 }
 
 export function BlogPostCard({ post }: BlogPostCardProps) {
