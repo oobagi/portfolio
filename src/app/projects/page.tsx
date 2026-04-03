@@ -8,6 +8,11 @@ import { HStack } from "@/components/ui/stack";
 export const metadata: Metadata = {
   title: "Projects",
   description: "Things I've built.",
+  openGraph: {
+    title: "Projects | Jaden Watson",
+    description: "Things I've built.",
+    url: "/projects",
+  },
 };
 
 export default async function ProjectsPage() {
