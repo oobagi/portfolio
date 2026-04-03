@@ -1,3 +1,17 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Jaden Watson — Developer Portfolio",
+  description:
+    "CS Senior at CSU Chico. Fullstack developer working across web, mobile, and developer tooling.",
+  openGraph: {
+    title: "Jaden Watson — Developer Portfolio",
+    description:
+      "CS Senior at CSU Chico. Fullstack developer working across web, mobile, and developer tooling.",
+    url: "/",
+  },
+};
+
 export default function Home() {
   return (
     <div className="tagline">

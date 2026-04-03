@@ -37,6 +37,7 @@ function generateSitemap() {
 
   const staticPages = [
     { url: "/", lastmod: today, priority: "1.0" },
+    { url: "/projects", lastmod: today, priority: "0.9" },
     { url: "/blog", lastmod: today, priority: "0.8" },
   ];
 

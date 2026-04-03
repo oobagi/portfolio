@@ -18,7 +18,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="project-image-card">
           <Image
             src={project.image}
-            alt=""
+            alt={`Screenshot of ${project.name}`}
             width={600}
             height={400}
             className="project-image"

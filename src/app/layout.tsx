@@ -53,8 +53,24 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={GeistSans.variable}>
       <head>
         <ThemeScript />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Jaden Watson",
+              url: "https://jadenwatson.me",
+              jobTitle: "Software Developer",
+              sameAs: ["https://github.com/oobagi"],
+            }),
+          }}
+        />
         <div className="site">
           <header className="site-header">
             <TaglineNav />
