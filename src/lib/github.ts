@@ -9,7 +9,7 @@ const PROJECT_IMAGES: Record<string, string> = {
   yap: "/projects/yap.png",
 };
 
-const HIDDEN_REPOS = new Set(["homebrew-tap", "oobagi"]);
+const OTHER_REPOS = new Set(["anyzork", "recycle-cli", "picturethat", "awesome-remote-control", "mark"]);
 
 export interface Project {
   name: string;
@@ -42,7 +42,7 @@ export async function getProjects(): Promise<Project[]> {
   const repos: GitHubRepo[] = await res.json();
 
   const projects: Project[] = repos
-    .filter((repo) => !repo.fork && !HIDDEN_REPOS.has(repo.name))
+    .filter((repo) => !repo.fork)
     .map((repo) => ({
       name: repo.name,
       description: repo.description,
@@ -55,7 +55,7 @@ export async function getProjects(): Promise<Project[]> {
     .map((name) => projects.find((p) => p.name === name))
     .filter((p): p is Project => p != null);
 
-  const rest = projects.filter((p) => !p.image);
+  const rest = projects.filter((p) => OTHER_REPOS.has(p.name));
 
   return [...featured, ...rest];
 }
