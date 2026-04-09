@@ -1,11 +1,15 @@
 const GITHUB_API = "https://api.github.com/users/oobagi/repos";
 
+const FEATURED_ORDER = ["yap", "notebook-cli", "jflow", "portfolio"];
+
 const PROJECT_IMAGES: Record<string, string> = {
   jflow: "/projects/jflow.png",
   "notebook-cli": "/projects/notebook-cli.png",
   portfolio: "/projects/portfolio.png",
   yap: "/projects/yap.png",
 };
+
+const HIDDEN_REPOS = new Set(["homebrew-tap", "oobagi"]);
 
 export interface Project {
   name: string;
@@ -37,15 +41,8 @@ export async function getProjects(): Promise<Project[]> {
 
   const repos: GitHubRepo[] = await res.json();
 
-  return repos
-    .filter((repo) => !repo.fork)
-    .sort((a, b) => {
-      if (b.stargazers_count !== a.stargazers_count) {
-        return b.stargazers_count - a.stargazers_count;
-      }
-      return new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime();
-    })
-    .slice(0, 10)
+  const projects: Project[] = repos
+    .filter((repo) => !repo.fork && !HIDDEN_REPOS.has(repo.name))
     .map((repo) => ({
       name: repo.name,
       description: repo.description,
@@ -53,4 +50,12 @@ export async function getProjects(): Promise<Project[]> {
       stars: repo.stargazers_count,
       image: PROJECT_IMAGES[repo.name] ?? null,
     }));
+
+  const featured = FEATURED_ORDER
+    .map((name) => projects.find((p) => p.name === name))
+    .filter((p): p is Project => p != null);
+
+  const rest = projects.filter((p) => !p.image);
+
+  return [...featured, ...rest];
 }
