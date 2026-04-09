@@ -45,7 +45,7 @@ export async function getProjects(): Promise<Project[]> {
       }
       return new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime();
     })
-    .slice(0, 6)
+    .slice(0, 10)
     .map((repo) => ({
       name: repo.name,
       description: repo.description,
