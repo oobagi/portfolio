@@ -26,9 +26,9 @@ export default async function ProjectsPage() {
         <ProjectCard key={project.name} project={project} />
       ))}
       {rest.length > 0 && (
-        <>
-          <h2 className="projects-section-label">Other</h2>
-          <div className="projects-section-content divider-list">
+        <div className="projects-grid-section">
+          <h2 className="projects-grid-section-label">Other</h2>
+          <div className="projects-grid-section-content">
             {rest.map((project) => (
               <ListItem key={project.name} href={project.url} external>
                 <span className="list-item-title">{project.name}</span>
@@ -38,16 +38,16 @@ export default async function ProjectsPage() {
               </ListItem>
             ))}
           </div>
-        </>
+        </div>
       )}
       {contributions.length > 0 && (
-        <>
-          <h2 className="projects-section-label">
+        <div className="projects-grid-section">
+          <h2 className="projects-grid-section-label">
             <a href="https://github.com/oobagi" target="_blank" rel="noopener noreferrer" className="section-label-link">
               OSS Contributions <span aria-hidden>&#8599;</span>
             </a>
           </h2>
-          <div className="projects-section-content divider-list">
+          <div className="projects-grid-section-content">
             {contributions.map((c) => {
               const { icon: PrIcon, className } = PR_ICONS[c.state];
               return (
@@ -61,7 +61,7 @@ export default async function ProjectsPage() {
               );
             })}
           </div>
-        </>
+        </div>
       )}
     </div>
   );

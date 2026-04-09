@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     default: "Jaden Watson",
     template: "%s | Jaden Watson",
   },
-  description: "Personal portfolio and blog showcasing my best projects.",
+  description: "Personal portfolio showcasing my best projects.",
   openGraph: {
     title: "Jaden Watson",
-    description: "Personal portfolio and blog showcasing my best projects.",
+    description: "Personal portfolio showcasing my best projects.",
     url: "https://jadenwatson.me",
     siteName: "Jaden Watson",
     type: "website",
@@ -36,11 +36,6 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    types: {
-      "application/rss+xml": "/feed.xml",
-    },
   },
 };
 

@@ -1,8 +1,8 @@
 const GITHUB_API = "https://api.github.com/users/oobagi/repos";
 
 const PROJECT_IMAGES: Record<string, string> = {
-  anyzork: "/projects/anyzork.png",
   jflow: "/projects/jflow.png",
+  "notebook-cli": "/projects/notebook-cli.png",
   portfolio: "/projects/portfolio.png",
   yap: "/projects/yap.png",
 };
@@ -52,6 +52,5 @@ export async function getProjects(): Promise<Project[]> {
       url: repo.html_url,
       stars: repo.stargazers_count,
       image: PROJECT_IMAGES[repo.name] ?? null,
-    }))
-;
+    }));
 }

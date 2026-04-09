@@ -302,6 +302,33 @@ ol {
   }
 }
 
+.projects-grid-section {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.projects-grid-section-label {
+  color: var(--fg-muted);
+}
+
+.projects-grid-section-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.projects-grid-section-content .list-item {
+  padding: 0;
+}
+
+@media (max-width: 640px) {
+  .projects-grid-section-content {
+    grid-template-columns: 1fr;
+  }
+}
+
 .divider-list {
   display: flex;
   flex-direction: column;
