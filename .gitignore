@@ -31,3 +31,7 @@ todo.txt
 
 # vercel
 .vercel
+
+# local tooling
+.claude/
+.playwright-mcp/
