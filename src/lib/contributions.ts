@@ -26,4 +26,10 @@ export const contributions: Contribution[] = [
     description: "Add workspace tabs — nested tab layer within each workspace",
     state: "open",
   },
+  {
+    repo: "react-native-menu/menu",
+    url: "https://github.com/react-native-menu/menu/pull/1197",
+    description: "Fix Android build on Expo SDK 55 / RN 0.83 / Kotlin 2.x",
+    state: "open",
+  },
 ];
