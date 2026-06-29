@@ -81,7 +81,7 @@ public/
   robots.txt                # Crawl rules
   feed.xml                  # RSS feed (generated at build time)
   sitemap.xml               # XML sitemap (generated at build time)
-  projects/                 # Project icon images (yap.png, jflow.png, anyzork.png)
+  projects/                 # Project icon images (yap.png, notebook-cli.png, portfolio.png)
   jaden.jpg                 # Avatar photo
   resume.pdf                # Resume
 docs/
