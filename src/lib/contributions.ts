@@ -15,21 +15,15 @@ export const PR_ICONS: Record<string, { icon: LucideIcon; className: string }> =
 };
 export const contributions: Contribution[] = [
   {
+    repo: "react-native-menu/menu",
+    url: "https://github.com/react-native-menu/menu/pull/1197",
+    description: "Fix Android build on Expo SDK 55+56 / RN 0.83 / Kotlin 2.x",
+    state: "merged",
+  },
+  {
     repo: "mdn/content",
     url: "https://github.com/mdn/content/pull/11740",
     description: "Fix some awkward hyperlink formatting",
     state: "merged",
-  },
-  {
-    repo: "manaflow-ai/cmux",
-    url: "https://github.com/manaflow-ai/cmux/pull/2234",
-    description: "Add workspace tabs — nested tab layer within each workspace",
-    state: "open",
-  },
-  {
-    repo: "react-native-menu/menu",
-    url: "https://github.com/react-native-menu/menu/pull/1197",
-    description: "Fix Android build on Expo SDK 55 / RN 0.83 / Kotlin 2.x",
-    state: "open",
   },
 ];

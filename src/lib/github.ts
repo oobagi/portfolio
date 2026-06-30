@@ -1,15 +1,14 @@
 const GITHUB_API = "https://api.github.com/users/oobagi/repos";
 
-const FEATURED_ORDER = ["yap", "notebook-cli", "jflow", "portfolio"];
+const FEATURED_ORDER = ["yap", "notebook-cli", "portfolio"];
 
 const PROJECT_IMAGES: Record<string, string> = {
-  jflow: "/projects/jflow.png",
   "notebook-cli": "/projects/notebook-cli.png",
   portfolio: "/projects/portfolio.png",
   yap: "/projects/yap.png",
 };
 
-const OTHER_REPOS = new Set(["anyzork", "recycle-cli", "picturethat", "awesome-remote-control", "mark"]);
+const OTHER_REPOS = new Set(["expo-awesome-app-icon", "picturethat", "mark"]);
 
 export interface Project {
   name: string;
