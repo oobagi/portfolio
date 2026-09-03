@@ -27,9 +27,9 @@ export default function Home() {
         </span>
       </p>
       <p className="text-muted">
-        Right now I&apos;m building Night Owl, an AI receptionist that
+        Right now I&apos;m building <a href="https://callnightowl.com" target="_blank" rel="noopener noreferrer" className="tagline-link">Night Owl</a>, an AI receptionist that
         answers the phone for local contractors, books jobs, and follows
-        up on leads. Before that, Yap, a macOS dictation tool, plus a
+        up on leads. Before that, <a href="https://github.com/oobagi/yap" target="_blank" rel="noopener noreferrer" className="tagline-link">Yap</a>, a macOS dictation tool, plus a
         handful of CLI tools I still use every day.
       </p>
       <p className="text-muted">
