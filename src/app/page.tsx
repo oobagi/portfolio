@@ -27,10 +27,10 @@ export default function Home() {
         </span>
       </p>
       <p className="text-muted">
-        I build things that scratch my own itch. A voice
-        receptionist that answers calls for local contractors, books the
-        job, and follows up on the lead. A macOS dictation tool, because
-        I got tired of typing.
+        Right now I&apos;m building Night Owl, an AI receptionist that
+        answers the phone for local contractors, books jobs, and follows
+        up on leads. Before that, Yap, a macOS dictation tool, plus a
+        handful of CLI tools I still use every day.
       </p>
       <p className="text-muted">
         Graduating Fall 2026 and actively looking for software
