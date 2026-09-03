@@ -9,7 +9,7 @@ export function TaglineNav() {
       whatever else sounds interesting. Browse his{" "}
       <span className="tagline-nowrap"><FolderOpen size={18} strokeWidth={2.5} className="tagline-icon" />{" "}<Link href="/projects" className="tagline-link">projects</Link></span>, peruse his{" "}
       <span className="tagline-nowrap"><PenLine size={18} strokeWidth={2.5} className="tagline-icon" />{" "}<Link href="/blog" className="tagline-link">thoughts</Link></span>, or grab his{" "}
-      <span className="tagline-nowrap"><FileText size={18} strokeWidth={2.5} className="tagline-icon" />{" "}<a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="tagline-link">resume</a></span>.
+      <span className="tagline-nowrap"><FileText size={18} strokeWidth={2.5} className="tagline-icon" />{" "}<a href="/jadenwatson.pdf" target="_blank" rel="noopener noreferrer" className="tagline-link">resume</a></span>.
     </p>
   );
 }
