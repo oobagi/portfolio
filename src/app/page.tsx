@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Jaden Watson — Developer Portfolio",
   description:
-    "CS Senior at CSU Chico. Fullstack developer working across web, mobile, and developer tooling.",
+    "CS Senior at CSU Chico. Fullstack developer working across web, mobile, and native macOS. These days, AI agents.",
   openGraph: {
     title: "Jaden Watson — Developer Portfolio",
     description:
-      "CS Senior at CSU Chico. Fullstack developer working across web, mobile, and developer tooling.",
+      "CS Senior at CSU Chico. Fullstack developer working across web, mobile, and native macOS. These days, AI agents.",
     url: "/",
   },
 };
@@ -16,19 +17,21 @@ export default function Home() {
   return (
     <div className="tagline">
       <p>
-        CS Senior at CSU Chico.{" "}
+        CS Senior at{" "}
+        <span className="tagline-nowrap">
+          <Image src="/csu-chico-emblem.webp" alt="California State University, Chico" width={132} height={132} className="tagline-emblem" />{" "}CSU Chico.
+        </span>{" "}
         <span className="text-muted">
-          Fullstack developer working across web, mobile, and developer
-          tooling. Mostly TypeScript, Python, and React Native.
+          Fullstack developer working across web, mobile, and native
+          macOS. These days, AI agents. Mostly TypeScript, Python, and
+          Swift.
         </span>
       </p>
       <p className="text-muted">
-        <a href="https://github.com/oobagi" target="_blank" rel="noopener noreferrer" className="tagline-link">I build things</a> that scratch my own itch. CLI tools,
-        multiplatform apps, AI integrations. Most of my projects start
-        because something in my workflow is broken and I&apos;d rather
-        fix it than work around it. I care about developer experience
-        and writing code that other people can pick up without wanting
-        to rewrite it.
+        I build things that scratch my own itch. A voice
+        receptionist that answers calls for local contractors, books the
+        job, and follows up on the lead. A macOS dictation tool, because
+        I got tired of typing.
       </p>
       <p className="text-muted">
         Graduating Fall 2026 and actively looking for software
