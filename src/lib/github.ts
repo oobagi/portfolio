@@ -1,8 +1,9 @@
 const GITHUB_API = "https://api.github.com/users/oobagi/repos";
 
-const FEATURED_ORDER = ["yap", "notebook-cli", "portfolio"];
+const FEATURED_ORDER = ["night-owl", "yap", "notebook-cli", "portfolio"];
 
 const PROJECT_IMAGES: Record<string, string> = {
+  "night-owl": "/projects/night-owl.png",
   "notebook-cli": "/projects/notebook-cli.png",
   portfolio: "/projects/portfolio.png",
   yap: "/projects/yap.png",
@@ -17,6 +18,18 @@ export interface Project {
   stars: number;
   image: string | null;
 }
+
+// Projects that don't live in a public GitHub repo.
+const MANUAL_PROJECTS: Project[] = [
+  {
+    name: "night-owl",
+    description:
+      "AI agency for local service businesses. Voice agents that answer the phone, plus websites and custom back-office tooling.",
+    url: "https://callnightowl.com",
+    stars: 0,
+    image: PROJECT_IMAGES["night-owl"],
+  },
+];
 
 interface GitHubRepo {
   name: string;
@@ -35,20 +48,23 @@ export async function getProjects(): Promise<Project[]> {
 
   if (!res.ok) {
     console.error(`GitHub API error: ${res.status} ${res.statusText}`);
-    return [];
+    return MANUAL_PROJECTS;
   }
 
   const repos: GitHubRepo[] = await res.json();
 
-  const projects: Project[] = repos
-    .filter((repo) => !repo.fork)
-    .map((repo) => ({
-      name: repo.name,
-      description: repo.description,
-      url: repo.html_url,
-      stars: repo.stargazers_count,
-      image: PROJECT_IMAGES[repo.name] ?? null,
-    }));
+  const projects: Project[] = [
+    ...MANUAL_PROJECTS,
+    ...repos
+      .filter((repo) => !repo.fork)
+      .map((repo) => ({
+        name: repo.name,
+        description: repo.description,
+        url: repo.html_url,
+        stars: repo.stargazers_count,
+        image: PROJECT_IMAGES[repo.name] ?? null,
+      })),
+  ];
 
   const featured = FEATURED_ORDER
     .map((name) => projects.find((p) => p.name === name))
