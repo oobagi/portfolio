@@ -24,7 +24,7 @@ const MANUAL_PROJECTS: Project[] = [
   {
     name: "night-owl",
     description:
-      "AI receptionist for local service businesses. Voice agents that answer calls, book jobs, and follow up with every lead.",
+      "AI agency for local service businesses. Voice agents that answer the phone, plus websites and custom back-office tooling.",
     url: "https://callnightowl.com",
     stars: 0,
     image: PROJECT_IMAGES["night-owl"],
