@@ -210,6 +210,15 @@ ol {
   margin-right: 2px;
 }
 
+.tagline-emblem {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
 .tagline-icon {
   display: inline-block;
   vertical-align: middle;
