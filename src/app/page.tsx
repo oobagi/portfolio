@@ -4,11 +4,11 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Jaden Watson — Developer Portfolio",
   description:
-    "CS Senior at CSU Chico. Fullstack developer working across web, mobile, and native macOS. These days, AI agents.",
+    "CS Senior at CSU Chico. Fullstack developer working on AI agents across web, mobile, and native macOS.",
   openGraph: {
     title: "Jaden Watson — Developer Portfolio",
     description:
-      "CS Senior at CSU Chico. Fullstack developer working across web, mobile, and native macOS. These days, AI agents.",
+      "CS Senior at CSU Chico. Fullstack developer working on AI agents across web, mobile, and native macOS.",
     url: "/",
   },
 };
@@ -22,9 +22,8 @@ export default function Home() {
           <Image src="/csu-chico-emblem.webp" alt="California State University, Chico" width={132} height={132} className="tagline-emblem" />{" "}CSU Chico.
         </span>{" "}
         <span className="text-muted">
-          Fullstack developer working across web, mobile, and native
-          macOS. These days, AI agents. Mostly TypeScript, Python, and
-          Swift.
+          Fullstack developer working on AI agents across web, mobile,
+          and native macOS. Mostly TypeScript, Python, and Swift.
         </span>
       </p>
       <p className="text-muted">
